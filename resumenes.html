@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resúmenes y Pósters - Statistical DataPulse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg-small { background-color: #005A9C; color: white; }
+        .accent-text { color: #F58220; }
+        .secondary-bg { background-color: #E6F0F8; }
+        .navbar-sticky { position: sticky; top: 0; z-index: 50; background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background-color: #F58220; margin-top: 8px; margin-left: auto; margin-right: auto; }
+        .usta-sun-logo { width: 80px; height: 80px; background-color: #F58220; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .nav-link { padding: 8px 16px; border-radius: 6px; transition: background-color 0.3s ease, color 0.3s ease; }
+        .nav-link:hover { background-color: #E6F0F8; color: #005A9C; }
+        .content-placeholder { border: 2px dashed #cbd5e0; padding: 40px; text-align: center; color: #718096; border-radius: 8px; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="navbar-sticky">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                <div class="usta-sun-logo"><span>USTA</span></div>
+                <span class="text-2xl font-bold text-blue-700">Statistical <span class="accent-text">DataPulse</span></span>
+            </a>
+            <div class="hidden md:flex space-x-2">
+                <a href="index.html#evento" class="nav-link text-gray-700">Evento</a>
+                <a href="index.html#ponentes" class="nav-link text-gray-700">Ponentes</a>
+                <a href="index.html#programa" class="nav-link text-gray-700">Programa</a>
+                <a href="index.html#recursos" class="nav-link text-gray-700">Recursos</a>
+                <a href="index.html#fechas" class="nav-link text-gray-700">Fechas</a>
+                <a href="index.html#inscripciones" class="nav-link text-gray-700">Inscripciones</a>
+                <a href="index.html#contacto" class="nav-link text-gray-700">Contacto</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button-subpage" class="text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu-subpage" class="md:hidden hidden px-6 pb-3 space-y-1">
+            <a href="index.html#evento" class="block nav-link text-gray-700">Evento</a>
+            <a href="index.html#ponentes" class="block nav-link text-gray-700">Ponentes</a>
+            <a href="index.html#programa" class="block nav-link text-gray-700">Programa</a>
+            <a href="index.html#recursos" class="block nav-link text-gray-700">Recursos</a>
+            <a href="index.html#fechas" class="block nav-link text-gray-700">Fechas</a>
+            <a href="index.html#inscripciones" class="block nav-link text-gray-700">Inscripciones</a>
+            <a href="index.html#contacto" class="block nav-link text-gray-700">Contacto</a>
+        </div>
+    </nav>
+
+    <header class="hero-bg-small py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold">Resúmenes y Pósters</h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <p class="text-lg text-gray-700 mb-8 text-center max-w-2xl mx-auto">
+            Consulta los resúmenes de las ponencias y los trabajos presentados en la sesión de pósters del evento Statistical DataPulse.
+            Esta sección se actualizará con los materiales a medida que estén disponibles.
+        </p>
+        
+        <div class="content-placeholder my-12">
+            <p class="text-xl">Los resúmenes y pósters estarán disponibles aquí próximamente.</p>
+            <p class="mt-2">Gracias por tu paciencia.</p>
+        </div>
+
+        <!-- 
+        <div class="space-y-6">
+            <article class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-2">Título del Resumen/Póster 1</h2>
+                <p class="text-sm text-gray-500 mb-1">Autor(es): Nombre Apellido</p>
+                <p class="text-gray-700 mb-3">Breve descripción o abstract del trabajo...</p>
+                <a href="#" class="text-orange-500 hover:text-orange-700 font-semibold">Leer más / Descargar PDF &rarr;</a>
+            </article>
+
+            <article class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-2">Título del Resumen/Póster 2</h2>
+                <p class="text-sm text-gray-500 mb-1">Autor(es): Nombre Apellido</p>
+                <p class="text-gray-700 mb-3">Breve descripción o abstract del trabajo...</p>
+                <a href="#" class="text-orange-500 hover:text-orange-700 font-semibold">Leer más / Descargar PDF &rarr;</a>
+            </article>
+        </div> 
+        -->
+    </main>
+
+    <footer class="bg-blue-800 text-white py-8 text-center mt-12">
+        <div class="container mx-auto px-6">
+            <div class="mb-4">
+                <a href="https://www.usta.edu.co/" target="_blank" class="hover:text-orange-300 transition duration-300 mx-2">Universidad Santo Tomás</a> |
+                <a href="https://www.usta.edu.co/index.php/programas-academicos/pregrado/facultad-de-estadistica" target="_blank" class="hover:text-orange-300 transition duration-300 mx-2">Facultad de Estadística</a>
+            </div>
+            <p>&copy; 2025 Statistical DataPulse. Todos los derechos reservados.</p>
+            <p class="text-sm text-blue-200 mt-1">Alojado en GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle for subpage
+        const mobileMenuButtonSubpage = document.getElementById('mobile-menu-button-subpage');
+        const mobileMenuSubpage = document.getElementById('mobile-menu-subpage');
+        if(mobileMenuButtonSubpage) {
+            mobileMenuButtonSubpage.addEventListener('click', () => {
+                mobileMenuSubpage.classList.toggle('hidden');
+            });
+        }
+        // Smooth scroll for navigation links (if any on this page, though mostly for main page)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // Check if the link is for the current page or another page
+                if (window.location.pathname.endsWith(this.pathname) || this.pathname === '') {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === "#") {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                    if(mobileMenuSubpage && !mobileMenuSubpage.classList.contains('hidden') && targetId !== "#") {
+                        mobileMenuSubpage.classList.add('hidden');
+                    }
+                }
+                // If it's a link to another page (e.g. index.html#section), the browser will handle it.
+            });
+        });
+    </script>
+</body>
+</html>

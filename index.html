@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistical DataPulse - USTA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #005A9C; /* Azul USTA principal */
+        }
+        .accent-bg {
+            background-color: #F58220; /* Naranja USTA */
+        }
+        .accent-text {
+            color: #F58220; /* Naranja USTA */
+        }
+        .secondary-bg {
+            background-color: #E6F0F8; /* Azul claro */
+        }
+        .navbar-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #F58220; /* Naranja USTA */
+            margin-top: 8px;
+            margin-left: auto; 
+            margin-right: auto; 
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .usta-sun-logo {
+            width: 80px; 
+            height: 80px;
+            background-color: #F58220; 
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .nav-link {
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .nav-link:hover {
+            background-color: #E6F0F8; 
+            color: #005A9C; 
+        }
+        .resource-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .resource-card h3 {
+            color: #005A9C; 
+        }
+        .resource-card .cta-button { /* Specific class for CTA button in resource card */
+            color: white;
+            background-color: #F58220; /* Naranja USTA */
+            font-weight: 600;
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-align: center;
+            display: inline-block;
+            margin-top: auto; /* Pushes button to the bottom */
+        }
+        .resource-card .cta-button:hover {
+            background-color: #d97706; /* Naranja más oscuro */
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="navbar-sticky">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3"> <div class="usta-sun-logo">
+                    <span>USTA</span> 
+                </div>
+                <span class="text-2xl font-bold text-blue-700">Statistical <span class="accent-text">DataPulse</span></span>
+            </a>
+            <div class="hidden md:flex space-x-2">
+                <a href="#evento" class="nav-link text-gray-700">Evento</a>
+                <a href="#ponentes" class="nav-link text-gray-700">Ponentes</a>
+                <a href="#programa" class="nav-link text-gray-700">Programa</a>
+                <a href="#recursos" class="nav-link text-gray-700">Recursos</a>
+                <a href="#fechas" class="nav-link text-gray-700">Fechas</a>
+                <a href="#inscripciones" class="nav-link text-gray-700">Inscripciones</a>
+                <a href="#contacto" class="nav-link text-gray-700">Contacto</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden px-6 pb-3 space-y-1">
+            <a href="#evento" class="block nav-link text-gray-700">Evento</a>
+            <a href="#ponentes" class="block nav-link text-gray-700">Ponentes</a>
+            <a href="#programa" class="block nav-link text-gray-700">Programa</a>
+            <a href="#recursos" class="block nav-link text-gray-700">Recursos</a>
+            <a href="#fechas" class="block nav-link text-gray-700">Fechas</a>
+            <a href="#inscripciones" class="block nav-link text-gray-700">Inscripciones</a>
+            <a href="#contacto" class="block nav-link text-gray-700">Contacto</a>
+        </div>
+    </nav>
+
+    <header class="hero-bg text-white">
+        <div class="container mx-auto px-6 py-20 text-center">
+            <img src="https://placehold.co/150x150/FFFFFF/005A9C?text=DataPulse&font=inter" alt="Logo Statistical DataPulse" class="mx-auto mb-8 rounded-full shadow-lg w-32 h-32 md:w-40 md:h-40">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 fade-in-up">Statistical <span class="text-orange-400">DataPulse</span> 2025</h1>
+            <p class="text-xl md:text-2xl mb-6 fade-in-up" style="animation-delay: 0.2s;">Facultad de Estadística - Universidad Santo Tomás</p>
+            <p class="text-2xl md:text-3xl font-semibold mb-8 fade-in-up" style="animation-delay: 0.4s;">Noviembre 7 y 8, 2025</p>
+            <a href="#inscripciones" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105 fade-in-up" style="animation-delay: 0.6s;">
+                Inscríbete Ahora
+            </a>
+        </div>
+    </header>
+
+    <section id="evento" class="py-16 secondary-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-2 section-title mx-auto text-blue-700">Sobre el Evento</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                Un espacio para explorar las fronteras de la gestión de la información y los procesos estadísticos, conectando academia, industria y sector público.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="fade-in-up">
+                    <img src="https://placehold.co/600x400/005A9C/FFFFFF?text=Visualización+de+Datos&font=inter" alt="Imagen descriptiva del evento: Visualización de Datos" class="rounded-lg shadow-xl">
+                </div>
+                <div class="fade-in-up" style="animation-delay: 0.2s;">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-700">Temática Principal</h3>
+                    <p class="text-gray-700 mb-4 text-lg">
+                        Políticas de gestión de la información y procesos estadísticos.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        Statistical DataPulse busca ser un punto de encuentro para discutir los avances, desafíos y mejores prácticas en el ciclo de vida de los datos, desde su recolección y análisis hasta su comunicación y uso en la toma de decisiones estratégicas. Fomentaremos el diálogo sobre la importancia de la reproducibilidad, la ética y el impacto social de la estadística y la ciencia de datos.
+                    </p>
+                    <a href="https://www.usta.edu.co/index.php/programas-academicos/pregrado/facultad-de-estadistica" target="_blank" class="inline-block accent-bg hover:bg-orange-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-300">
+                        Conoce la Facultad
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ponentes" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title mx-auto text-blue-700">Ponentes Confirmados</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in-up">
+                    <img src="https://placehold.co/150x150/F58220/FFFFFF?text=PU&font=inter" alt="Foto Piedad Urdinola" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-orange-400">
+                    <h3 class="text-xl font-semibold mb-1 text-blue-700">Piedad Urdinola</h3>
+                    <p class="text-gray-600 mb-2">Directora del DANE</p>
+                    <p class="text-sm text-gray-500">Experta en estadísticas oficiales y políticas de información.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.1s;">
+                    <img src="https://placehold.co/150x150/F58220/FFFFFF?text=GB&font=inter" alt="Foto Giovany Babativa" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-orange-400">
+                    <h3 class="text-xl font-semibold mb-1 text-blue-700">Giovany Babativa</h3>
+                    <p class="text-gray-600 mb-2">Director de Analítica del Centro Nacional de Consultoría</p>
+                    <p class="text-sm text-gray-500">Líder en analítica de datos aplicada y consultoría estratégica.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.2s;">
+                    <img src="https://placehold.co/150x150/F58220/FFFFFF?text=KC&font=inter" alt="Foto Karen Corrales" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-orange-400">
+                    <h3 class="text-xl font-semibold mb-1 text-blue-700">Karen Corrales</h3>
+                    <p class="text-gray-600 mb-2">Costa Rica</p>
+                    <p class="text-sm text-gray-500">Especialista en [Área de especialidad de Karen - TBD].</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.3s;">
+                    <img src="https://placehold.co/150x150/F58220/FFFFFF?text=SG&font=inter" alt="Foto Sofia Garzón" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-orange-400">
+                    <h3 class="text-xl font-semibold mb-1 text-blue-700">Sofia Garzón</h3>
+                    <p class="text-gray-600 mb-2">Alcaldía de Bogotá (participación por confirmar)</p>
+                    <p class="text-sm text-gray-500">Experiencia en datos y sector público.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.4s;">
+                    <img src="https://placehold.co/150x150/F58220/FFFFFF?text=DE&font=inter" alt="Foto Danilo Espino" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-orange-400">
+                    <h3 class="text-xl font-semibold mb-1 text-blue-700">Danilo Espino</h3>
+                    <p class="text-gray-600 mb-2">ILDA (Iniciativa Latinoamericana por los Datos Abiertos) (participación por confirmar)</p>
+                    <p class="text-sm text-gray-500">Promotor de datos abiertos en la región.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="programa" class="py-16 secondary-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title mx-auto text-blue-700">Programa del Evento</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-xl mb-8 fade-in-up">
+                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">Actividades Principales</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li>Comunicaciones cortas y ponencias magistrales.</li>
+                        <li>Espacio de pósters (los mejores trabajos serán invitados a publicar en la Revista Comunicaciones en Estadística).</li>
+                        <li>Cursillos con temáticas de interés para todo público.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-xl fade-in-up" style="animation-delay: 0.2s;">
+                    <h3 class="text-2xl font-semibold mb-4 text-orange-500">Cursillo Certificado Destacado</h3>
+                    <div class="border-l-4 border-orange-500 pl-4">
+                        <h4 class="text-xl font-medium text-blue-700">MLOps para el Bien Público: Ciencia de Datos Reproducible y Escalable con Datos Abiertos de Colombia</h4>
+                        <p class="text-gray-700 mt-2">
+                            Este cursillo ofrecerá certificación de participación y se enfocará en herramientas y metodologías para proyectos de ciencia de datos con impacto social, utilizando datos abiertos.
+                        </p>
+                        <p class="text-sm text-gray-500 mt-3">Cupo limitado. ¡Asegura tu lugar!</p>
+                         <p class="text-sm text-gray-500 mt-1">Inspirado por <a href="https://idatosabiertos.org/" target="_blank" class="text-blue-600 hover:underline">idatosabiertos.org</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recursos" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title mx-auto text-blue-700">Recursos del Evento</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                Explora los materiales, resúmenes y presentaciones de Statistical DataPulse.
+            </p>
+            <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="resource-card fade-in-up">
+                    <img src="https://placehold.co/80x80/005A9C/FFFFFF?text=Res&font=inter" alt="Icono de Resúmenes" class="mx-auto mb-4 w-20 h-20">
+                    <h3 class="text-xl font-semibold mb-3 text-center">Resúmenes y Pósters</h3>
+                    <p class="text-gray-700 mb-4 text-sm">
+                        Consulta los resúmenes de las ponencias y los trabajos presentados en la sesión de pósters.
+                    </p>
+                    <a href="resumenes.html" class="cta-button">
+                        Ver Resúmenes
+                    </a>
+                </div>
+
+                <div class="resource-card fade-in-up" style="animation-delay: 0.15s;">
+                     <img src="https://placehold.co/80x80/005A9C/FFFFFF?text=Repo&font=inter" alt="Icono de Repositorios" class="mx-auto mb-4 w-20 h-20">
+                    <h3 class="text-xl font-semibold mb-3 text-center">Repositorios de Cursillos</h3>
+                    <p class="text-gray-700 mb-4 text-sm">
+                        Accede a los materiales, código y datos utilizados en los cursillos ofrecidos durante el evento.
+                    </p>
+                    <a href="repositorios.html" class="cta-button">
+                        Acceder a Repositorios
+                    </a>
+                </div>
+
+                <div class="resource-card fade-in-up" style="animation-delay: 0.3s;">
+                    <img src="https://placehold.co/80x80/005A9C/FFFFFF?text=PPT&font=inter" alt="Icono de Presentaciones" class="mx-auto mb-4 w-20 h-20">
+                    <h3 class="text-xl font-semibold mb-3 text-center">Presentaciones Destacadas</h3>
+                    <p class="text-gray-700 mb-4 text-sm">
+                        Descarga las diapositivas de las ponencias magistrales y explora contenido interactivo.
+                    </p>
+                    <a href="presentaciones.html" class="cta-button">
+                        Ver Presentaciones
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fechas" class="py-16 secondary-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title mx-auto text-blue-700">Fechas Importantes</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg card-hover fade-in-up">
+                    <h3 class="text-xl font-semibold mb-3 text-orange-500">Recepción de Comunicaciones y Pósters</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><span class="font-semibold">Primer llamado:</span> Hasta Agosto 31, 2025</li>
+                        <li><span class="font-semibold">Segundo llamado:</span> Hasta Septiembre 30, 2025</li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mt-3">¡Comparte tu investigación!</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg card-hover fade-in-up" style="animation-delay: 0.1s;">
+                    <h3 class="text-xl font-semibold mb-3 text-orange-500">Inscripciones</h3>
+                    <p class="text-gray-700"><span class="font-semibold">Apertura:</span> Ya abiertas</p>
+                    <p class="text-gray-700"><span class="font-semibold">Cierre:</span> Hasta Octubre 31, 2025</p>
+                    <p class="text-sm text-gray-500 mt-3">No te quedes por fuera.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg card-hover fade-in-up" style="animation-delay: 0.2s;">
+                    <h3 class="text-xl font-semibold mb-3 text-orange-500">Fechas del Evento</h3>
+                    <p class="text-2xl font-bold text-blue-700">Noviembre 7 y 8, 2025</p>
+                    <p class="text-gray-700">Universidad Santo Tomás, Bogotá</p>
+                    <p class="text-sm text-gray-500 mt-3">¡Te esperamos!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inscripciones" class="py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6 section-title mx-auto text-blue-700">Inscripciones</h2>
+            <p class="text-gray-700 mb-4 max-w-xl mx-auto">
+                Asegura tu participación en Statistical DataPulse. Los costos de inscripción serán anunciados próximamente.
+            </p>
+            <div class="bg-white p-8 rounded-lg shadow-xl max-w-md mx-auto mb-8 fade-in-up">
+                <h3 class="text-2xl font-semibold text-orange-500 mb-4">Costos</h3>
+                <p class="text-xl text-gray-700 font-bold">¡Próximamente!</p>
+                <p class="text-gray-600 mt-2">Estamos trabajando para definir los costos y ofrecerte la mejor experiencia. Mantente atento a las actualizaciones.</p>
+            </div>
+            <p class="text-gray-700 mb-4">
+                Recuerda que hay un <span class="font-semibold">cupo limitado</span> para el cursillo certificado "MLOps para el Bien Público".
+            </p>
+            <a href="#" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105">
+                Formulario de Inscripción (Próximamente)
+            </a>
+        </div>
+    </section>
+    
+    <section id="organizadores" class="py-16 secondary-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title mx-auto text-blue-700">Comité Organizador</h2>
+            <div class="flex flex-wrap justify-center gap-8 text-center">
+                <div class="fade-in-up">
+                    <img src="https://placehold.co/120x120/005A9C/FFFFFF?text=WP&font=inter" alt="Organizador Wilmer Pineda Rios" class="w-24 h-24 rounded-full mx-auto mb-2 shadow-md">
+                    <p class="font-semibold text-blue-700">Wilmer Pineda Rios</p>
+                </div>
+                <div class="fade-in-up" style="animation-delay: 0.1s;">
+                    <img src="https://placehold.co/120x120/005A9C/FFFFFF?text=LF&font=inter" alt="Organizadora Lida Fonseca" class="w-24 h-24 rounded-full mx-auto mb-2 shadow-md">
+                    <p class="font-semibold text-blue-700">Lida Fonseca</p>
+                </div>
+                <div class="fade-in-up" style="animation-delay: 0.2s;">
+                    <img src="https://placehold.co/120x120/005A9C/FFFFFF?text=IZ&font=inter" alt="Organizador Isaac Zainea" class="w-24 h-24 rounded-full mx-auto mb-2 shadow-md">
+                    <p class="font-semibold text-blue-700">Isaac Zainea</p>
+                </div>
+            </div>
+            <p class="text-center text-gray-600 mt-8">Comité Científico: Por definir.</p>
+        </div>
+    </section>
+
+    <section id="contacto" class="py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6 section-title mx-auto text-blue-700">Contacto</h2>
+            <p class="text-gray-700 mb-8 max-w-xl mx-auto">
+                ¿Tienes preguntas o necesitas más información? No dudes en contactarnos. 
+                Por favor, especifica "<span class="font-semibold">Statistical DataPulse</span>" en el asunto del correo para una gestión más eficiente.
+            </p>
+            <div class="fade-in-up">
+                <h3 class="text-xl font-semibold text-blue-700 mb-3">Comité Organizador Principal</h3>
+                <div class="space-y-2 text-lg text-gray-700">
+                    <p><a href="mailto:carloszainea@usta.edu.co" class="text-blue-600 hover:underline">carloszainea@usta.edu.co</a></p>
+                    <p><a href="mailto:lidafonseca@usta.edu.co" class="text-blue-600 hover:underline">lidafonseca@usta.edu.co</a></p>
+                    <p><a href="mailto:wilmerpineda@usta.edu.co" class="text-blue-600 hover:underline">wilmerpineda@usta.edu.co</a></p>
+                </div>
+                <p class="text-gray-600 mt-6">
+                    <span class="font-semibold">Ubicación:</span> Facultad de Estadística, Universidad Santo Tomás<br>
+                    Edificio Doctor Angélico, Carrera 9 #72-90, Bogotá, Colombia.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-blue-800 text-white py-8 text-center">
+        <div class="container mx-auto px-6">
+            <div class="mb-4">
+                <a href="https://www.usta.edu.co/" target="_blank" class="hover:text-orange-300 transition duration-300 mx-2">Universidad Santo Tomás</a> |
+                <a href="https://www.usta.edu.co/index.php/programas-academicos/pregrado/facultad-de-estadistica" target="_blank" class="hover:text-orange-300 transition duration-300 mx-2">Facultad de Estadística</a>
+            </div>
+            <p>&copy; 2025 Statistical DataPulse. Todos los derechos reservados.</p>
+            <p class="text-sm text-blue-200 mt-1">Diseñado con fines demostrativos. Alojado en GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === "#") { // For links like href="#"
+                     window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                if (!mobileMenu.classList.contains('hidden') && targetId !== "#") {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

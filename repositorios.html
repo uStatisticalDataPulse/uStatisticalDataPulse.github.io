@@ -3,54 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repositorios de Cursillos - Statistical DataPulse</title>
+    <title>Repositorios - Statistical DataPulse</title>
+    <link rel="icon" href="https://usantotomas.edu.co/hubfs/favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .hero-bg-small { background-color: #005A9C; color: white; }
-        .accent-text { color: #F58220; }
-        .secondary-bg { background-color: #E6F0F8; }
-        .navbar-sticky { position: sticky; top: 0; z-index: 50; background-color: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background-color: #F58220; margin-top: 8px; margin-left: auto; margin-right: auto; }
-        .usta-sun-logo { width: 80px; height: 80px; background-color: #F58220; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 1.2rem; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .nav-link { padding: 8px 16px; border-radius: 6px; transition: background-color 0.3s ease, color 0.3s ease; }
-        .nav-link:hover { background-color: #E6F0F8; color: #005A9C; }
-        .repo-link-card { background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.2s ease; }
-        .repo-link-card:hover { transform: translateY(-4px); }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <nav class="navbar-sticky">
+    <nav class="navbar">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-3">
-                <div class="usta-sun-logo"><span>USTA</span></div>
-                <span class="text-2xl font-bold text-blue-700">Statistical <span class="accent-text">DataPulse</span></span>
+            <a href="index.html" class="flex items-center space-x-3 cursor-pointer">
+                <img src="https://usantotomas.edu.co/hs-fs/hubfs/social-suggested-images/usantotomas.edu.cohs-fshubfsLogo%20Santoto%20-%20SP%20Bogota%20Horizontal%20blanco-2.png?width=188&height=43&name=usantotomas.edu.cohs-fshubfsLogo%20Santoto%20-%20SP%20Bogota%20Horizontal%20blanco-2.png" class="h-8 md:h-10 w-auto" alt="Logo USTA">
+                <span class="text-xl md:text-2xl font-bold">Statistical <span class="accent-text">DataPulse</span></span>
             </a>
-            <div class="hidden md:flex space-x-2">
-                <a href="index.html#evento" class="nav-link text-gray-700">Evento</a>
-                <a href="index.html#ponentes" class="nav-link text-gray-700">Ponentes</a>
-                <a href="index.html#programa" class="nav-link text-gray-700">Programa</a>
-                <a href="index.html#recursos" class="nav-link text-gray-700">Recursos</a>
-                <a href="index.html#fechas" class="nav-link text-gray-700">Fechas</a>
-                <a href="index.html#inscripciones" class="nav-link text-gray-700">Inscripciones</a>
-                <a href="index.html#contacto" class="nav-link text-gray-700">Contacto</a>
+            <div class="hidden md:flex space-x-1">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="resumenes.html" class="nav-link">Resúmenes</a>
+                <a href="presentaciones.html" class="nav-link">Presentaciones</a>
             </div>
             <div class="md:hidden">
-                <button id="mobile-menu-button-subpage" class="text-gray-700 focus:outline-none">
+                <button id="mobile-menu-button" class="focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
         </div>
-        <div id="mobile-menu-subpage" class="md:hidden hidden px-6 pb-3 space-y-1">
-            <a href="index.html#evento" class="block nav-link text-gray-700">Evento</a>
-            <a href="index.html#ponentes" class="block nav-link text-gray-700">Ponentes</a>
-            <a href="index.html#programa" class="block nav-link text-gray-700">Programa</a>
-            <a href="index.html#recursos" class="block nav-link text-gray-700">Recursos</a>
-            <a href="index.html#fechas" class="block nav-link text-gray-700">Fechas</a>
-            <a href="index.html#inscripciones" class="block nav-link text-gray-700">Inscripciones</a>
-            <a href="index.html#contacto" class="block nav-link text-gray-700">Contacto</a>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="resumenes.html" class="nav-link">Resúmenes</a>
+            <a href="presentaciones.html" class="nav-link">Presentaciones</a>
         </div>
     </nav>
 
@@ -62,50 +43,31 @@
 
     <main class="container mx-auto px-6 py-12">
         <p class="text-lg text-gray-700 mb-8 text-center max-w-2xl mx-auto">
-            Accede a los materiales, código fuente y datos utilizados en los cursillos ofrecidos durante el evento Statistical DataPulse.
-            Los enlaces a los repositorios (principalmente en GitHub) se listarán aquí.
+            Accede a los materiales, código fuente y datos utilizados en los cursillos.
         </p>
-        
         <div class="grid md:grid-cols-2 gap-6">
-            <div class="repo-link-card">
-                <h2 class="text-xl font-semibold text-blue-700 mb-2">MLOps para el Bien Público: Ciencia de Datos Reproducible y Escalable con Datos Abiertos de Colombia</h2>
-                <p class="text-gray-600 text-sm mb-3">Materiales del cursillo certificado, incluyendo notebooks, datasets y guías.</p>
-                <a href="https://github.com/usuario/ejemplo-repo-mlops" target="_blank" class="inline-flex items-center text-orange-500 hover:text-orange-700 font-semibold">
-                    Ir al Repositorio en GitHub
+            <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                <h2 class="text-xl font-semibold text-blue-800 mb-2">MLOps para el Bien Público</h2>
+                <a href="https://github.com/" target="_blank" class="inline-flex items-center text-orange-500 hover:text-orange-700 font-semibold">
+                    Ir al Repositorio
                     <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
             </div>
-
-            <div class="repo-link-card">
-                <h2 class="text-xl font-semibold text-blue-700 mb-2">Cursillo: [Nombre de Otro Cursillo]</h2>
-                <p class="text-gray-600 text-sm mb-3">Descripción breve del cursillo y los materiales que se pueden encontrar en el repositorio.</p>
-                <a href="#" class="inline-flex items-center text-gray-400 font-semibold cursor-not-allowed" aria-disabled="true">
+            <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                <h2 class="text-xl font-semibold text-blue-800 mb-2">Cursillo: [Otro Cursillo]</h2>
+                <a href="#" class="inline-flex items-center text-gray-400 font-semibold cursor-not-allowed">
                     Enlace Próximamente
                 </a>
             </div>
-            </div>
+        </div>
     </main>
 
-    <footer class="bg-blue-800 text-white py-8 text-center mt-12">
+    <footer class="footer py-8 text-center mt-12">
         <div class="container mx-auto px-6">
-            <div class="mb-4">
-                <a href="https://www.usta.edu.co/" target="_blank" class="hover:text-orange-300 transition duration-300 mx-2">Universidad Santo Tomás</a> |
-                <a href="https://www.usta.edu.co/index.php/programas-academicos/pregrado/facultad-de-estadistica" target="_blank" class="hover:text-orange-300 transition duration-300 mx-2">Facultad de Estadística</a>
-            </div>
-            <p>&copy; 2025 Statistical DataPulse. Todos los derechos reservados.</p>
-            <p class="text-sm text-blue-200 mt-1">Alojado en GitHub Pages.</p>
+            <p>&copy; 2025 Statistical DataPulse. Universidad Santo Tomás.</p>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle for subpage
-        const mobileMenuButtonSubpage = document.getElementById('mobile-menu-button-subpage');
-        const mobileMenuSubpage = document.getElementById('mobile-menu-subpage');
-        if(mobileMenuButtonSubpage) {
-            mobileMenuButtonSubpage.addEventListener('click', () => {
-                mobileMenuSubpage.classList.toggle('hidden');
-            });
-        }
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>

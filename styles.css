@@ -1,0 +1,173 @@
+/* General Body and Font Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc; /* bg-slate-50 */
+    color: #1e293b; /* text-slate-800 */
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background-color: #005A9C; /* Azul USTA principal */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    color: white;
+}
+
+.nav-link {
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #f1f5f9; /* slate-100 */
+}
+
+.nav-link:hover {
+    background-color: #004a80; /* Un azul un poco más oscuro */
+    color: white;
+}
+
+/* Mobile Menu Styles */
+#mobile-menu {
+    background-color: #005A9C;
+}
+
+#mobile-menu .nav-link {
+    display: block;
+    padding: 12px 16px;
+    border-top: 1px solid #004a80;
+}
+
+/* Hero Section Styles */
+.hero-bg {
+    background-image: linear-gradient(rgba(0, 90, 156, 0.7), rgba(0, 42, 74, 0.8)), url('images/PiezaPrincipal.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-bg-small {
+    background-color: #005A9C;
+    color: white;
+}
+
+
+/* Accent Colors (Gold/Yellow from branding) */
+.accent-bg {
+    background-color: #FFC72C;
+    color: #004a80;
+}
+.accent-bg:hover {
+    background-color: #e6b327;
+}
+
+.accent-text {
+    color: #FFC72C;
+}
+
+/* Section and Card Styles */
+.secondary-bg {
+    background-color: #E6F0F8; /* Azul claro */
+}
+
+.section-title {
+    color: #005A9C;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #FFC72C; /* Gold accent */
+    margin-top: 8px;
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.resource-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.resource-card h3 {
+    color: #005A9C; 
+}
+
+.cta-button {
+    color: #004a80;
+    background-color: #FFC72C;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-align: center;
+    display: inline-block;
+    margin-top: auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e6b327;
+}
+
+
+/* Table Styles */
+.table-auto th, .table-auto td {
+    padding: 8px 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.table-auto th {
+    background-color: #f1f5f9;
+}
+
+/* H5P Interactive Content */
+.h5p-container { 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    overflow: hidden; 
+}
+
+/* Animation */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #004a80;
+    color: white;
+}

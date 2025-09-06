@@ -15,14 +15,16 @@
     <nav class="navbar">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="index.html" class="flex items-center space-x-3 cursor-pointer">
-                <img src="https://usantotomas.edu.co/hs-fs/hubfs/social-suggested-images/usantotomas.edu.cohs-fshubfsLogo%20Santoto%20-%20SP%20Bogota%20Horizontal%20blanco-2.png?width=188&height=43&name=usantotomas.edu.cohs-fshubfsLogo%20Santoto%20-%20SP%20Bogota%20Horizontal%20blanco-2.png" class="h-12 w-auto" alt="Logo Statistical DataPulse">
+                <img src="images/logo_evento_blanco.png" class="h-12 w-auto" alt="Logo Statistical DataPulse">
             </a>
             <div class="hidden md:flex space-x-1">
                 <a href="#evento" class="nav-link">Evento</a>
                 <a href="convocatoria.html" class="nav-link">Convocatoria</a>
                 <a href="#ponentes" class="nav-link">Ponentes</a>
+                <a href="#comite" class="nav-link">Comité</a>
                 <a href="#programa" class="nav-link">Programa</a>
                 <a href="#recursos" class="nav-link">Recursos</a>
+                <a href="#instructivo-inscripcion" class="nav-link">Instructivo</a>
                 <a href="#inscripciones" class="nav-link">Inscripciones</a>
             </div>
             <div class="md:hidden">
@@ -35,8 +37,10 @@
             <a href="#evento" class="nav-link">Evento</a>
             <a href="convocatoria.html" class="nav-link">Convocatoria</a>
             <a href="#ponentes" class="nav-link">Ponentes</a>
+            <a href="#comite" class="nav-link">Comité</a>
             <a href="#programa" class="nav-link">Programa</a>
             <a href="#recursos" class="nav-link">Recursos</a>
+            <a href="#instructivo-inscripcion" class="nav-link">Instructivo</a>
             <a href="#inscripciones" class="nav-link">Inscripciones</a>
         </div>
     </nav>
@@ -48,7 +52,7 @@
                 <img src="images/logo_evento_blanco.png" alt="Statistical DataPulse 2025" class="w-2/3 md:w-3/4 mx-auto mb-8 fade-in-up">
                 <p class="text-xl md:text-2xl mb-6 fade-in-up" style="animation-delay: 0.2s;">Facultad de Estadística - Universidad Santo Tomás</p>
                 <p class="text-2xl md:text-3xl font-semibold mb-8 fade-in-up" style="animation-delay: 0.4s;">Noviembre 7 y 8, 2025</p>
-                <a href="#inscripciones" class="accent-bg font-bold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105 fade-in-up" style="animation-delay: 0.6s;">
+                <a href="https://inscripcioneventos.usta.edu.co" target="_blank" class="accent-bg font-bold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105 fade-in-up" style="animation-delay: 0.6s;">
                     Inscríbete Ahora
                 </a>
             </div>
@@ -85,31 +89,68 @@
         <section id="ponentes" class="py-16 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-12 section-title">Ponentes Invitados</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Katherine Sandí Araya -->
                     <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center card-hover fade-in-up">
-                        <img src="https://placehold.co/150x150/005A9C/FFFFFF?text=PU&font=inter" alt="Foto Piedad Urdinola" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400">
-                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Piedad Urdinola, PhD</h3>
-                        <p class="text-gray-600 mb-2">Directora del DANE</p>
+                        <img src="images/sandi_araya.jpg" alt="Foto Katherine Sandí Araya" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
+                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Katherine Sandí Araya</h3>
+                        <p class="text-gray-600 mb-2">Investigadora y científica de datos, CONARE (Costa Rica)</p>
                     </div>
+                    <!-- Karen Corrales Bolívar -->
                     <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.1s;">
-                        <img src="https://placehold.co/150x150/005A9C/FFFFFF?text=GB&font=inter" alt="Foto Giovany Babativa" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400">
+                        <img src="images/karen_corrales.jpg" alt="Foto Karen Corrales Bolívar" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
+                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Karen Corrales Bolívar</h3>
+                        <p class="text-gray-600 mb-2">Estadística e investigadora, CONARE (Costa Rica)</p>
+                    </div>
+                    <!-- Renzo Cáceres Rossi -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.2s;">
+                        <img src="images/renzo_caceres.png" alt="Foto Renzo Cáceres Rossi" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
+                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Renzo Cáceres Rossi</h3>
+                        <p class="text-gray-600 mb-2">Mentor, Data Science Research Peru</p>
+                    </div>
+                    <!-- Giovany Babativa -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.3s;">
+                        <img src="images/givanny_babativa.jpg" alt="Foto Giovany Babativa" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
                         <h3 class="text-xl font-semibold mb-1 text-blue-800">Giovany Babativa</h3>
                         <p class="text-gray-600 mb-2">Director de Analítica del CNC</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.2s;">
-                        <img src="https://placehold.co/150x150/005A9C/FFFFFF?text=DE&font=inter" alt="Foto Danilo Espino" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400">
-                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Danilo Espino</h3>
-                        <p class="text-gray-600 mb-2">Promotor de datos abiertos en ILDA</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="comite" class="py-16 secondary-bg">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12 section-title">Comité Organizador</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in-up">
+                        <img src="images/wilmer_pineda.jpg" alt="Foto Wilmer Pineda" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
+                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Wilmer Pineda</h3>
+                        <p class="text-gray-600 mb-2">Comité Organizador</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.1s;">
+                        <img src="images/lida_fonseca.jpg" alt="Foto Lida Fonseca" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
+                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Lida Fonseca</h3>
+                        <p class="text-gray-600 mb-2">Comité Organizador</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.2s;">
+                        <img src="images/mario_pacheco.jpg" alt="Foto Mario Pacheco" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
+                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Mario Pacheco</h3>
+                        <p class="text-gray-600 mb-2">Comité Organizador</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.3s;">
+                        <img src="images/isaac_zainea.jpg" alt="Foto Isaac Zainea" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
+                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Isaac Zainea</h3>
+                        <p class="text-gray-600 mb-2">Comité Organizador</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="programa" class="py-16 secondary-bg">
+        <section id="programa" class="py-16 bg-white">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-12 section-title">Programa del Evento</h2>
                 <div class="max-w-4xl mx-auto">
-                    <div class="bg-white p-8 rounded-lg shadow-xl mb-8 fade-in-up">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-xl mb-8 fade-in-up">
                         <h3 class="text-2xl font-semibold mb-4 accent-text">Actividades Principales</h3>
                         <ul class="list-disc list-inside space-y-3 text-gray-700">
                             <li>Comunicaciones cortas y ponencias magistrales.</li>
@@ -121,7 +162,7 @@
             </div>
         </section>
 
-        <section id="recursos" class="py-16 bg-white">
+        <section id="recursos" class="py-16 secondary-bg">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-12 section-title">Recursos del Evento</h2>
                 <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
@@ -138,6 +179,24 @@
                         <a href="presentaciones.html" class="cta-button">Ver Materiales</a>
                     </div>
                 </div>
+            </div>
+        </section>
+        
+        <section id="instructivo-inscripcion" class="py-16 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-12 section-title">¿Cómo Inscribirse?</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+                    Hemos preparado un video corto para guiarte en el proceso de inscripción y pago. ¡Sigue los pasos y asegura tu cupo!
+                </p>
+                <div class="max-w-4xl mx-auto bg-gray-100 p-2 md:p-4 rounded-lg shadow-xl border">
+                     <video controls class="w-full rounded-lg">
+                        <source src="images/inscripcion.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+                 <a href="https://inscripcioneventos.usta.edu.co" target="_blank" class="mt-8 inline-block accent-bg font-bold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    Ir al Formulario de Inscripción
+                </a>
             </div>
         </section>
 
@@ -160,9 +219,6 @@
                         </table>
                     </div>
                 </div>
-                <a href="https://ustatisticaldatapulse.github.io/" target="_blank" class="mt-8 inline-block accent-bg font-bold py-3 px-8 rounded-lg text-lg">
-                    Formulario (Próximamente)
-                </a>
             </div>
         </section>
         
@@ -175,3 +231,4 @@
     <script src="scripts.js"></script>
 </body>
 </html>
+

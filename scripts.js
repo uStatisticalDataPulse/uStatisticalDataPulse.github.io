@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Smooth scroll for navigation links on the main page
-    // This part is more effective when the sections are on the same page.
-    // For multi-page navigation, standard href attributes do the job.
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             // Check if the link is on the same page
@@ -35,4 +33,32 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // --- CÓDIGO ACTUALIZADO PARA EL ACORDEÓN DE LA AGENDA ---
+    const allAccordionItems = document.querySelectorAll('.accordion-item');
+
+    allAccordionItems.forEach(item => {
+        const toggle = item.querySelector('.accordion-toggle');
+        const content = item.querySelector('.accordion-content');
+        const icon = item.querySelector('.accordion-icon');
+
+        toggle.addEventListener('click', () => {
+            const isOpen = item.classList.contains('is-open');
+
+            // 1. Cerrar todos los items
+            allAccordionItems.forEach(i => {
+                i.classList.remove('is-open');
+                i.querySelector('.accordion-content').style.display = 'none';
+                i.querySelector('.accordion-icon').style.transform = 'rotate(0deg)';
+            });
+
+            // 2. Si el item clickeado no estaba abierto, abrirlo
+            if (!isOpen) {
+                item.classList.add('is-open');
+                content.style.display = 'block';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        });
+    });
+    // --- FIN DEL CÓDIGO DEL ACORDEÓN ---
 });

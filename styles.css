@@ -171,3 +171,10 @@ body {
     background-color: #004a80;
     color: white;
 }
+.accordion-item.is-open {
+    border-left: 5px solid #FFC72C; /* Borde dorado de acento */
+}
+
+.accordion-item.is-open .accordion-toggle {
+    background-color: #f1f5f9; /* bg-slate-100 (un gris más claro) */
+}

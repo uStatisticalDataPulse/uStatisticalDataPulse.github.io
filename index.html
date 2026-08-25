@@ -1,579 +1,448 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Statistical DataPulse - USTA</title>
-    <link rel="icon" href="https://usantotomas.edu.co/hubfs/favicon.ico" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <title>Statistical DataPulse 2026 · IA aplicada a la ciencia de datos y el modelado</title>
+    <meta name="description" content="Simposio de la Facultad de Estadística de la Universidad Santo Tomás. 11 y 12 de noviembre de 2026, Campus Doctor Angélico, Bogotá. Charlas y cursillos sobre IA aplicada a la ciencia de datos y el modelado.">
+    <link rel="canonical" href="https://ustatisticaldatapulse.github.io/">
+    <meta name="theme-color" content="#001024">
+
+    <!-- Tarjeta al compartir el enlace (WhatsApp, LinkedIn, X, Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Statistical DataPulse">
+    <meta property="og:locale" content="es_CO">
+    <meta property="og:url" content="https://ustatisticaldatapulse.github.io/">
+    <meta property="og:title" content="Statistical DataPulse 2026 · IA aplicada a la ciencia de datos y el modelado">
+    <meta property="og:description" content="11 y 12 de noviembre de 2026 · Campus Doctor Angélico, Bogotá. Organiza la Facultad de Estadística de la Universidad Santo Tomás.">
+    <meta property="og:image" content="https://ustatisticaldatapulse.github.io/images/og-2026.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="StatDataPulse 2026: IA aplicada a la ciencia de datos y el modelado. 11 y 12 de noviembre, Campus Doctor Angélico.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Statistical DataPulse 2026 · IA aplicada a la ciencia de datos y el modelado">
+    <meta name="twitter:description" content="11 y 12 de noviembre de 2026 · Campus Doctor Angélico, Bogotá.">
+    <meta name="twitter:image" content="https://ustatisticaldatapulse.github.io/images/og-2026.jpg">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.png" sizes="48x48" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-3 cursor-pointer">
-                <img src="images/logo_evento_blanco.png" class="h-12 w-auto" alt="Logo Statistical DataPulse">
-            </a>
-            <div class="hidden md:flex space-x-1">
-                <a href="#evento" class="nav-link">Evento</a>
-                <a href="convocatoria.html" class="nav-link">Convocatoria</a>
-                <a href="#ponentes" class="nav-link">Ponentes</a>
-                <a href="#comite" class="nav-link">Comité</a>
-                <a href="#programa" class="nav-link">Programa</a>
-                <a href="#recursos" class="nav-link">Recursos</a>
-                <a href="#instructivo-inscripcion" class="nav-link">Instructivo</a>
-                <a href="#inscripciones" class="nav-link">Inscripciones</a>
+<a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+<header class="barra">
+    <div class="contenedor barra__interior">
+        <a class="barra__logo" href="index.html">
+            <img src="images/logo_evento_blanco.png" alt="Simposio Statistical DataPulse" width="937" height="329">
+        </a>
+        <nav class="barra__enlaces" aria-label="Principal">
+            <a href="#evento">Evento</a>
+            <a href="#programa">Programa</a>
+            <a href="#ponentes">Ponentes</a>
+            <a href="#comite">Comité</a>
+            <a href="#convocatoria">Convocatoria</a>
+            <a href="#recursos">Recursos</a>
+            <a class="boton boton--primario boton--pequeno barra__cta" href="https://inscripcioneventos.usta.edu.co" target="_blank" rel="noopener">Inscríbete</a>
+        </nav>
+        <button class="barra__hamburguesa" id="boton-menu" type="button" aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+        </button>
+    </div>
+    <nav class="menu-movil" id="menu-movil" aria-label="Principal (móvil)">
+        <a href="#evento">Evento</a>
+        <a href="#programa">Programa</a>
+        <a href="#ponentes">Ponentes</a>
+        <a href="#comite">Comité</a>
+        <a href="#convocatoria">Convocatoria</a>
+        <a href="#recursos">Recursos</a>
+        <a href="https://inscripcioneventos.usta.edu.co" target="_blank" rel="noopener">Inscríbete</a>
+    </nav>
+</header>
+
+<main id="contenido">
+
+    <section class="hero">
+        <img class="hero__imagen" src="images/hero-2026.jpg" alt="" aria-hidden="true">
+        <div class="hero__velo"></div>
+        <div class="contenedor hero__contenido">
+            <p class="hero__antetitulo"><span class="hero__raya"></span><span>FACULTAD DE ESTADÍSTICA · UNIVERSIDAD SANTO TOMÁS</span></p>
+            <img class="hero__marca" src="images/logo_evento_blanco.png" alt="Statistical DataPulse" width="937" height="329">
+            <h1 class="hero__lema">IA aplicada a la ciencia de datos y el modelado</h1>
+
+            <div class="fechas">
+                <div class="fechas__cajas">
+                    <span class="fechas__dia">11</span>
+                    <span class="fechas__amp" aria-hidden="true">&amp;</span>
+                    <span class="fechas__dia">12</span>
+                </div>
+                <p class="fechas__mes"><span>DE NOVIEMBRE</span><span>DE 2026</span></p>
             </div>
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+
+            <p class="hero__lugar">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F29200" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span><strong>Campus Doctor Angélico</strong> · Cra 9 #72-90, Bogotá</span>
+            </p>
+
+            <div class="hero__acciones">
+                <a class="boton boton--primario" href="https://inscripcioneventos.usta.edu.co" target="_blank" rel="noopener">Inscríbete aquí
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </a>
+                <a class="boton boton--fantasma" href="#programa">Ver el programa</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="aliados" aria-label="Organizador y aliados">
+        <div class="contenedor aliados__interior">
+            <div class="aliados__bloque">
+                <span class="aliados__rotulo">ORGANIZA</span>
+                <img class="aliados__usta" src="images/logo_usta_blanco.png" alt="Universidad Santo Tomás, sede principal Bogotá">
+            </div>
+            <span class="aliados__separador" aria-hidden="true"></span>
+            <div class="aliados__bloque">
+                <span class="aliados__rotulo">ALIADO ACADÉMICO</span>
+                <span class="aliados__tarjeta"><img src="images/logo_elbosque.jpg" alt="Doctorado en Ciencia de Datos e Inteligencia Artificial, Universidad El Bosque"></span>
+            </div>
+            <span class="aliados__nota">Entrada con inscripción previa</span>
+        </div>
+    </section>
+
+    <section class="seccion seccion--papel" id="evento">
+        <div class="contenedor">
+            <div class="cabeza">
+                <span class="cabeza__antetitulo">EL EVENTO</span>
+                <h2>Cuando el modelo aprende, la estadística decide</h2>
+                <span class="cabeza__raya"></span>
+            </div>
+            <div class="evento__reja">
+                <img class="evento__poster" src="images/pieza-2026-poster.jpg" alt="Pieza de campaña de Statistical DataPulse 2026" width="900" height="1600">
+                <div class="evento__texto">
+                    <p class="evento__entrada">La edición 2026 del simposio se concentra en un punto concreto: <strong>qué cambia en el trabajo estadístico cuando la inteligencia artificial entra al proceso de modelado</strong>. Dos días de charlas y cursillos prácticos sobre agentes de IA, modelos estocásticos y riesgo, con código en la mano.</p>
+                    <p class="evento__parrafo">Organiza la Facultad de Estadística de la Universidad Santo Tomás, con el acompañamiento del Doctorado en Ciencia de Datos e Inteligencia Artificial de la Universidad El Bosque. Está dirigido a estudiantes, docentes, investigadores y profesionales que trabajen con datos.</p>
+                    <div class="fichas">
+                        <div class="ficha">
+                            <span class="ficha__rotulo">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E37303" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M8 3v4M16 3v4M3 11h18"></path></svg>
+                                FECHA
+                            </span>
+                            <strong>11 y 12 de noviembre, 2026</strong>
+                        </div>
+                        <div class="ficha">
+                            <span class="ficha__rotulo">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E37303" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                LUGAR
+                            </span>
+                            <strong>Campus Doctor Angélico</strong>
+                            <span class="detalle">Cra 9 #72-90, Bogotá</span>
+                        </div>
+                        <div class="ficha">
+                            <span class="ficha__rotulo">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E37303" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"></path><path d="M5 21V8l7-4 7 4v13"></path><path d="M10 21v-6h4v6"></path></svg>
+                                ORGANIZA
+                            </span>
+                            <strong>Facultad de Estadística</strong>
+                            <span class="detalle">Universidad Santo Tomás</span>
+                        </div>
+                        <div class="ficha">
+                            <span class="ficha__rotulo">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E37303" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path></svg>
+                                DIRIGIDO A
+                            </span>
+                            <strong>Estudiantes y profesionales</strong>
+                            <span class="detalle">Estadística, datos y áreas afines</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion seccion--blanco" id="programa">
+        <div class="contenedor">
+            <div class="cabeza cabeza--partida">
+                <div>
+                    <span class="cabeza__antetitulo">PROGRAMA</span>
+                    <h2>Dos días, dos rutas paralelas</h2>
+                    <span class="cabeza__raya"></span>
+                </div>
+            </div>
+
+            <div class="pestanas" role="tablist" aria-label="Días del evento">
+                <button class="pestana" id="pestana-11" type="button" role="tab" aria-selected="true" aria-controls="dia-11">
+                    <strong>Miércoles 11 de noviembre</strong>
+                    <span>Apertura, charla inaugural y cuatro cursillos</span>
+                </button>
+                <button class="pestana" id="pestana-12" type="button" role="tab" aria-selected="false" aria-controls="dia-12">
+                    <strong>Jueves 12 de noviembre</strong>
+                    <span>Agenda en construcción</span>
                 </button>
             </div>
-        </div>
-        <div id="mobile-menu" class="md:hidden hidden">
-            <a href="#evento" class="nav-link">Evento</a>
-            <a href="convocatoria.html" class="nav-link">Convocatoria</a>
-            <a href="#ponentes" class="nav-link">Ponentes</a>
-            <a href="#comite" class="nav-link">Comité</a>
-            <a href="#programa" class="nav-link">Programa</a>
-            <a href="#recursos" class="nav-link">Recursos</a>
-            <a href="#instructivo-inscripcion" class="nav-link">Instructivo</a>
-            <a href="#inscripciones" class="nav-link">Inscripciones</a>
-        </div>
-    </nav>
 
-    <header class="hero-bg">
-        <div class="container mx-auto px-6 py-24 md:py-32 text-center">
-            <div class="max-w-3xl mx-auto">
-                <img src="images/logo_evento_blanco.png" alt="Statistical DataPulse 2025" class="w-2/3 md:w-3/4 mx-auto mb-8 fade-in-up">
-                <p class="text-xl md:text-2xl mb-6 fade-in-up" style="animation-delay: 0.2s;">Facultad de Estadística - Universidad Santo Tomás</p>
-                <p class="text-2xl md:text-3xl font-semibold mb-8 fade-in-up" style="animation-delay: 0.4s;">Noviembre 7 y 8, 2025</p>
-                <a href="https://inscripcioneventos.usta.edu.co" target="_blank" class="accent-bg font-bold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105 fade-in-up" style="animation-delay: 0.6s;">
-                    Inscríbete Ahora
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section id="evento" class="py-16 secondary-bg">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-2 section-title">Sobre el Evento</h2>
-                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-                    Un espacio para explorar las fronteras de la gestión de la información y los procesos estadísticos, conectando academia, industria y sector público.
-                </p>
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div class="fade-in-up">
-                        <img src="images/PiezaPrincipal-Poster.jpg" alt="Poster del evento Statistical DataPulse" class="rounded-lg shadow-xl">
+            <div class="agenda" id="dia-11" role="tabpanel" aria-labelledby="pestana-11" tabindex="0">
+                <div class="franja">
+                    <span class="franja__hora">7:00 – 8:00</span>
+                    <div class="franja__cuerpo">
+                        <span class="franja__titulo">Instalación y apertura</span>
+                        <span class="franja__quien">Andrés Cruz · Decano de la Facultad de Estadística</span>
+                        <span class="franja__donde">Auditorio Mayor</span>
                     </div>
-                    <div class="fade-in-up" style="animation-delay: 0.2s;">
-                        <h3 class="text-2xl font-semibold mb-4 text-blue-800">Temática Principal: Políticas de Gestión de la Información y Procesos Estadísticos</h3>
-                        <p class="text-gray-700 mb-4">
-                            En una era donde los datos son el activo más valioso, Statistical DataPulse se presenta como un evento de alto nivel para abordar la necesidad crítica de establecer marcos de gobernanza de datos robustos y procesos estadísticos eficientes.
-                        </p>
-                        <p class="text-gray-700 mb-6">
-                            Reuniremos a líderes de opinión, expertos y académicos para dialogar sobre cómo las políticas de gestión de la información y los procesos estadísticos modernos son clave para extraer valor real y accionable.
-                        </p>
-                        <a href="https://usantotomas.edu.co/estadistica" target="_blank" class="inline-block accent-bg font-semibold py-2 px-6 rounded-lg transition duration-300">
-                            Conoce la Facultad
-                        </a>
+                </div>
+                <div class="franja">
+                    <span class="franja__hora">8:00 – 10:00</span>
+                    <div class="franja__cuerpo">
+                        <span class="franja__encabezado">
+                            <span class="franja__titulo">Charla inaugural</span>
+                            <span class="etiqueta etiqueta--invitado">INVITADO</span>
+                        </span>
+                        <span class="franja__quien">Juan Pablo Llinás · Doctorado en Ciencia de Datos e IA, Universidad El Bosque</span>
+                        <span class="franja__donde">Auditorio Mayor</span>
+                    </div>
+                </div>
+                <div class="franja franja--pausa">
+                    <span class="franja__hora">10:00 – 10:30</span>
+                    <span class="franja__titulo">Receso</span>
+                </div>
+                <div class="franja--paralela">
+                    <span class="franja__hora">10:30 – 12:00</span>
+                    <div class="rutas">
+                        <div class="curso">
+                            <span class="curso__ruta">CURSILLO · RUTA A</span>
+                            <span class="curso__titulo">Agentes de IA</span>
+                            <span class="curso__quien">Iván Ladino · Docente de tiempo completo, USTA</span>
+                        </div>
+                        <div class="curso pendiente">
+                            <span class="curso__ruta">CURSILLO · RUTA B</span>
+                            <span class="curso__titulo">[TÍTULO POR CONFIRMAR]</span>
+                            <span class="curso__quien">[PONENTE POR CONFIRMAR]</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="franja franja--pausa">
+                    <span class="franja__hora">12:00 – 14:00</span>
+                    <span class="franja__titulo">Almuerzo</span>
+                </div>
+                <div class="franja--paralela">
+                    <span class="franja__hora">14:00 – 16:00</span>
+                    <div class="rutas">
+                        <div class="curso">
+                            <span class="curso__ruta">CURSILLO · RUTA A</span>
+                            <span class="curso__titulo">Ecuaciones diferenciales estocásticas y riesgo financiero</span>
+                            <span class="curso__quien">Jhonier Rangel · Docente de tiempo completo, USTA</span>
+                        </div>
+                        <div class="curso">
+                            <span class="curso__ruta">CURSILLO · RUTA B</span>
+                            <span class="curso__titulo pendiente--texto">[TÍTULO POR CONFIRMAR]</span>
+                            <span class="curso__quien">Mario José Pacheco · Docente de tiempo completo, USTA</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section id="ponentes" class="py-16 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12 section-title">Ponentes Invitados</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.3s;">
-                        <img src="images/hanwen.jpeg" alt="Foto Hanwen Zhang" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
-                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Hanwen Zhang</h3>
-                        <p class="text-gray-600 mb-2">Profesora Universidad Nacional de Colombia</p>
+            <div id="dia-12" role="tabpanel" aria-labelledby="pestana-12" tabindex="0">
+                <div class="aviso-pendiente">
+                    <div class="aviso-pendiente__texto">
+                        <strong>[AGENDA DEL 12 DE NOVIEMBRE POR CONFIRMAR]</strong>
+                        <p>Publicaremos aquí las conferencias, cursillos y el cierre del evento en cuanto el comité los apruebe.</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.3s;">
-                        <img src="images/givanny_babativa.jpg" alt="Foto Giovany Babativa" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
-                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Giovany Babativa</h3>
-                        <p class="text-gray-600 mb-2">Director de Analítica del CNC</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center card-hover fade-in-up">
-                        <img src="images/sandi_araya.jpg" alt="Foto Katherine Sandí Araya" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
-                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Katherine Sandí Araya</h3>
-                        <p class="text-gray-600 mb-2">Investigadora y científica de datos, CONARE (Costa Rica)</p>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.2s;">
-                        <img src="images/renzo_caceres.png" alt="Foto Renzo Cáceres Rossi" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
-                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Renzo Cáceres Rossi</h3>
-                        <p class="text-gray-600 mb-2">Mentor, Data Science Research Peru</p>
-                    </div>
-
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.1s;">
-                        <img src="images/karen_corrales.jpg" alt="Foto Karen Corrales Bolívar" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
-                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Karen Corrales Bolívar</h3>
-                        <p class="text-gray-600 mb-2">Estadística e investigadora, CONARE (Costa Rica)</p>
-                    </div>
+                    <a class="boton boton--oscuro" href="#inscripciones">Avísame cuando salga</a>
                 </div>
             </div>
-        </section>
-        
-        <section id="comite" class="py-16 secondary-bg">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12 section-title">Comité Organizador</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-                        <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in-up">
-                        <img src="images/andres_cruz.jpg" alt="Foto Andres Cruz" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
-                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Andres Cruz</h3>
-                        <p class="text-gray-600 mb-2">Decano Facultad Estadística</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in-up">
-                        <img src="images/wilmer_pineda.jpg" alt="Foto Wilmer Pineda" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
-                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Wilmer Pineda</h3>
-                        <p class="text-gray-600 mb-2">Comité Organizador</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.1s;">
-                        <img src="images/lida_fonseca.jpg" alt="Foto Lida Fonseca" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
-                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Lida Fonseca</h3>
-                        <p class="text-gray-600 mb-2">Comité Organizador</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.2s;">
-                        <img src="images/mario_pacheco.jpg" alt="Foto Mario Pacheco" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
-                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Mario Pacheco</h3>
-                        <p class="text-gray-600 mb-2">Comité Organizador</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-lg text-center card-hover fade-in-up" style="animation-delay: 0.3s;">
-                        <img src="images/isaac_zainea.JPG" alt="Foto Isaac Zainea" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-yellow-400 object-cover">
-                        <h3 class="text-xl font-semibold mb-1 text-blue-800">Isaac Zainea</h3>
-                        <p class="text-gray-600 mb-2">Comité Organizador</p>
-                    </div>
+        </div>
+    </section>
+
+    <section class="seccion seccion--papel" id="ponentes">
+        <div class="contenedor">
+            <div class="cabeza">
+                <span class="cabeza__antetitulo">QUIÉNES HABLAN</span>
+                <h2>Ponentes y talleristas</h2>
+                <span class="cabeza__raya"></span>
+            </div>
+            <div class="personas">
+                <div class="persona">
+                    <span class="persona__retrato" aria-hidden="true">JL</span>
+                    <span class="etiqueta etiqueta--invitado">CHARLA INAUGURAL</span>
+                    <span class="persona__nombre">Juan Pablo Llinás</span>
+                    <span class="persona__rol">Invitado del Doctorado en Ciencia de Datos e IA, Universidad El Bosque</span>
+                </div>
+                <div class="persona">
+                    <span class="persona__retrato persona__retrato--cursillo" aria-hidden="true">IL</span>
+                    <span class="etiqueta etiqueta--cursillo">CURSILLO</span>
+                    <span class="persona__nombre">Iván Ladino</span>
+                    <span class="persona__rol">Agentes de IA · Docente de tiempo completo, USTA</span>
+                </div>
+                <div class="persona">
+                    <span class="persona__retrato persona__retrato--cursillo" aria-hidden="true">JR</span>
+                    <span class="etiqueta etiqueta--cursillo">CURSILLO</span>
+                    <span class="persona__nombre">Jhonier Rangel</span>
+                    <span class="persona__rol">EDE y riesgo financiero · Docente de tiempo completo, USTA</span>
+                </div>
+                <div class="persona">
+                    <span class="persona__retrato persona__retrato--cursillo" aria-hidden="true">MP</span>
+                    <span class="etiqueta etiqueta--cursillo">CURSILLO</span>
+                    <span class="persona__nombre">Mario José Pacheco</span>
+                    <span class="persona__rol">Docente de tiempo completo, USTA</span>
                 </div>
             </div>
-        </section>
+            <p class="nota-linea">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9AA4B0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5"></path><path d="M12 16h.01"></path></svg>
+                <span>Faltan por anunciar los ponentes del 12 de noviembre y el cursillo de la ruta B. Las fotografías reemplazarán las iniciales cuando el comité las envíe.</span>
+            </p>
+        </div>
+    </section>
 
-        <section id="programa" class="py-16 bg-white">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12 section-title">Programa del Evento</h2>
+    <section class="seccion seccion--blanco" id="comite">
+        <div class="contenedor">
+            <div class="cabeza">
+                <span class="cabeza__antetitulo">QUIÉNES LO HACEN</span>
+                <h2>Comité organizador</h2>
+                <span class="cabeza__raya"></span>
+            </div>
+            <div class="comite">
+                <div class="miembro">
+                    <span class="miembro__inicial miembro__inicial--decano" aria-hidden="true">AC</span>
+                    <span class="miembro__datos"><span class="miembro__nombre">Andrés Cruz</span><span class="miembro__rol">Decano, Facultad de Estadística</span></span>
+                </div>
+                <div class="miembro">
+                    <span class="miembro__inicial" aria-hidden="true">MP</span>
+                    <span class="miembro__datos"><span class="miembro__nombre">Mario Pacheco</span><span class="miembro__rol">Comité organizador</span></span>
+                </div>
+                <div class="miembro">
+                    <span class="miembro__inicial" aria-hidden="true">EM</span>
+                    <span class="miembro__datos"><span class="miembro__nombre">Edna Moreno</span><span class="miembro__rol">Comité organizador</span></span>
+                </div>
+                <div class="miembro">
+                    <span class="miembro__inicial" aria-hidden="true">JR</span>
+                    <span class="miembro__datos"><span class="miembro__nombre">Jhonier Rangel</span><span class="miembro__rol">Comité organizador</span></span>
+                </div>
+                <div class="miembro">
+                    <span class="miembro__inicial" aria-hidden="true">KS</span>
+                    <span class="miembro__datos"><span class="miembro__nombre">Katherine Serrano</span><span class="miembro__rol">Comité organizador</span></span>
+                </div>
+                <div class="miembro">
+                    <span class="miembro__inicial" aria-hidden="true">VZ</span>
+                    <span class="miembro__datos"><span class="miembro__nombre">Violeta Zuluaga</span><span class="miembro__rol">Comité organizador</span></span>
+                </div>
+                <div class="miembro">
+                    <span class="miembro__inicial" aria-hidden="true">WR</span>
+                    <span class="miembro__datos"><span class="miembro__nombre">William Rincón</span><span class="miembro__rol">Comité organizador</span></span>
+                </div>
+                <div class="miembro">
+                    <span class="miembro__inicial" aria-hidden="true">JS</span>
+                    <span class="miembro__datos"><span class="miembro__nombre">Javier Sierra</span><span class="miembro__rol">Comité organizador</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="text-center mb-12 fade-in-up">
-                    <a href="agenda.pdf" download="Agenda-Statistical-DataPulse.pdf" class="inline-block accent-bg font-bold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105">
-                        Descargar Agenda Completa (PDF)
+    <section class="seccion seccion--papel" id="convocatoria">
+        <div class="contenedor">
+            <div class="cabeza">
+                <span class="cabeza__antetitulo">PARTICIPA</span>
+                <h2>Convocatoria y recursos</h2>
+                <span class="cabeza__raya"></span>
+            </div>
+            <div class="recursos" id="recursos">
+                <div class="recurso">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E37303" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7Z"></path><path d="M14 3v5h5"></path><path d="M9 13h6M9 17h4"></path></svg>
+                    <h3>Convocatoria de trabajos</h3>
+                    <p>Pósters y comunicaciones cortas de 15 minutos. Fechas de llamado [POR CONFIRMAR].</p>
+                    <a class="boton boton--primario boton--pequeno" href="convocatoria.html">Ver convocatoria
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"></path><path d="m12 5 7 7-7 7"></path></svg>
                     </a>
                 </div>
-
-                <div class="max-w-6xl mx-auto space-y-4">
-
-                    <div class="accordion-item bg-gray-50 rounded-lg shadow-xl fade-in-up overflow-hidden transition-all duration-300" style="animation-delay: 0.1s;">
-                        <button class="accordion-toggle flex justify-between items-center w-full p-6 text-left focus:outline-none transition-colors duration-200 hover:bg-gray-100">
-                            <h3 class="text-2xl font-semibold text-blue-800">Agenda: Viernes 7 de Noviembre</h3>
-                            <svg class="accordion-icon accent-text w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="accordion-content p-6 pt-0" style="display: none;">
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-left table-auto">
-                                    <thead class="bg-gray-200">
-                                        <tr>
-                                            <th class="px-4 py-2 font-semibold">Hora</th>
-                                            <th class="px-4 py-2 font-semibold">Actividad</th>
-                                            <th class="px-4 py-2 font-semibold">Conferencista(s)</th>
-                                            <th class="px-4 py-2 font-semibold">Lugar</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="divide-y divide-gray-200">
-                                        <tr>
-                                            <td class="px-4 py-3">8:30 a 9:15</td>
-                                            <td class="px-4 py-3">Conferencia Inaugural: Viendo formas en las nubes: el ruido que parece señal</td>
-                                            <td class="px-4 py-3">PhD. Hanwen Zhang</td>
-                                            <td class="px-4 py-3">Auditorio Mayor</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3">9:15 a 10:15</td>
-                                            <td class="px-4 py-3">Taller DANE: Socialización de Información Estadística del DANE</td>
-                                            <td class="px-4 py-3">Angie Dissley Malambo</td>
-                                            <td class="px-4 py-3">Auditorio Mayor</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3 bg-gray-100" colspan="4">10:15 a 10:30 - Break</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3">10:30 a 12:00</td>
-                                            <td class="px-4 py-3">Talleres Temáticos</td>
-                                            <td class="px-4 py-3">Ver detalle de talleres</td>
-                                            <td class="px-4 py-3"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3 bg-gray-100" colspan="4">12:00 a 14:00 - Almuerzo</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3">14:00 a 15:30</td>
-                                            <td class="px-4 py-3">Conferencia y Taller Alcaldía de Bogotá: Construir confianza con datos, apuesta de la Secretaría General de la Alcaldía Mayor de Bogotá</td>
-                                            <td class="px-4 py-3">María José Fernández, Michael Cruz Roa</td>
-                                            <td class="px-4 py-3">Auditorio Mayor</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3 bg-gray-100" colspan="4">15:30 a 15:45 - Break</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3">15:45 a 16:45</td>
-                                            <td class="px-4 py-3">Ponencias Cortas</td>
-                                            <td class="px-4 py-3">Ver detalle de ponencias</td>
-                                            <td class="px-4 py-3"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3 bg-gray-100" colspan="4">16:45 a 17:00 - Break</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3">17:00 a 19:00</td>
-                                            <td class="px-4 py-3">Conversatorio: Ley de Encuestas: Enfoque Estadístico y Electoral</td>
-                                            <td class="px-4 py-3">César Caballero, PhD Cristian Téllez, PhD Giovany Babativa. Modera: Andrés Cruz</td>
-                                            <td class="px-4 py-3">Auditorio Mayor</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3">19:00 a 19:15</td>
-                                            <td class="px-4 py-3">Acto Cultural</td>
-                                            <td class="px-4 py-3"></td>
-                                            <td class="px-4 py-3">Auditorio Mayor</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item bg-gray-50 rounded-lg shadow-xl fade-in-up overflow-hidden transition-all duration-300" style="animation-delay: 0.2s;">
-                        <button class="accordion-toggle flex justify-between items-center w-full p-6 text-left focus:outline-none transition-colors duration-200 hover:bg-gray-100">
-                            <h3 class="text-2xl font-semibold text-blue-800">Agenda: Sábado 8 de Noviembre</h3>
-                            <svg class="accordion-icon accent-text w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="accordion-content p-6 pt-0" style="display: none;">
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-left table-auto">
-                                    <thead class="bg-gray-200">
-                                        <tr>
-                                            <th class="px-4 py-2 font-semibold">Hora</th>
-                                            <th class="px-4 py-2 font-semibold">Actividad</th>
-                                            <th class="px-4 py-2 font-semibold">Conferencista(s)</th>
-                                            <th class="px-4 py-2 font-semibold">Lugar</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="divide-y divide-gray-200">
-                                        <tr>
-                                            <td class="px-4 py-3">8:00 a 9:30</td>
-                                            <td class="px-4 py-3">Mini Evento: Datos al Parque</td>
-                                            <td class="px-4 py-3">Isaac Zainea</td>
-                                            <td class="px-4 py-3">Por Confirmar</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3">9:30 a 10:15</td>
-                                            <td class="px-4 py-3">Conferencia Internacional: Del dato sensible al dato útil: privacidad sin sacrificar análisis estadístico</td>
-                                            <td class="px-4 py-3">Karen Corrales</td>
-                                            <td class="px-4 py-3">Por Confirmar</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3 bg-gray-100" colspan="4">10:15 a 10:30 - Break</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3">10:30 a 12:00</td>
-                                            <td class="px-4 py-3">Talleres Temáticos</td>
-                                            <td class="px-4 py-3">Ver detalle de talleres</td>
-                                            <td class="px-4 py-3"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3">12:00 a 13:00</td>
-                                            <td class="px-4 py-3">Conferencia de Cierre: La importancia de la cultura estadística</td>
-                                            <td class="px-4 py-3">Claudia Andrea Cely Ruiz</td>
-                                            <td class="px-4 py-3">Auditorio Mayor</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3">13:00 a 13:15</td>
-                                            <td class="px-4 py-3">Cierre del evento</td>
-                                            <td class="px-4 py-3"></td>
-                                            <td class="px-4 py-3"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item bg-gray-50 rounded-lg shadow-xl fade-in-up overflow-hidden transition-all duration-300" style="animation-delay: 0.3s;">
-                        <button class="accordion-toggle flex justify-between items-center w-full p-6 text-left focus:outline-none transition-colors duration-200 hover:bg-gray-100">
-                            <h3 class="text-2xl font-semibold text-blue-800">Talleres Temáticos</h3>
-                            <svg class="accordion-icon accent-text w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="accordion-content p-6 pt-0" style="display: none;">
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-left table-auto">
-                                    <thead class="bg-gray-200">
-                                        <tr>
-                                            <th class="px-4 py-2 font-semibold">Nombre del Taller</th>
-                                            <th class="px-4 py-2 font-semibold">Conferencista(s)</th>
-                                            <th class="px-4 py-2 font-semibold">Lugar</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="divide-y divide-gray-200">
-                                        <tr>
-                                            <td class="px-4 py-3">Del código al conocimiento: Desarrollo de paquetes en R como motor de innovación estadística y producción científica en Latinoamérica.</td>
-                                            <td class="px-4 py-3">Renzo Cáceres</td>
-                                            <td class="px-4 py-3">Salón 405</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3">Anonimizar sin perder valor: técnicas prácticas para proteger datos reales.</td>
-                                            <td class="px-4 py-3">Katherine Sandí & Karen Corrales</td>
-                                            <td class="px-4 py-3">Salón 406</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="px-4 py-3">Introducción a los Modelos de Ecuaciones Estructurales</td>
-                                            <td class="px-4 py-3">Juan Carlos Rubriche Cárdenas</td>
-                                            <td class="px-4 py-3">Viernes: Salón 807 / Sábado: Salón 407</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item bg-gray-50 rounded-lg shadow-xl fade-in-up overflow-hidden transition-all duration-300" style="animation-delay: 0.4s;">
-                        <button class="accordion-toggle flex justify-between items-center w-full p-6 text-left focus:outline-none transition-colors duration-200 hover:bg-gray-100">
-                            <h3 class="text-2xl font-semibold text-blue-800">Detalle de Ponencias Cortas</h3>
-                            <svg class="accordion-icon accent-text w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <div class="accordion-content p-6 pt-0 space-y-6" style="display: none;">
-                            
-                            <div>
-                                <h4 class="text-xl font-semibold text-gray-800 mb-2">Economía y Finanzas</h4>
-                                <p class="mb-4 text-gray-600 font-medium">Moderador: Edna Carolina Moreno (Salón 901)</p>
-                                <div class="overflow-x-auto border rounded-lg">
-                                    <table class="w-full text-left table-auto">
-                                        <thead class="bg-gray-200">
-                                            <tr>
-                                                <th class="px-4 py-2 font-semibold">Ponencia</th>
-                                                <th class="px-4 py-2 font-semibold">Conferencista(s)</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="divide-y divide-gray-200 bg-white">
-                                            <tr>
-                                                <td class="px-4 py-3">Las exportaciones totales en Colombia: una visión desde la inversión extranjera directa, tasa de cambio, tasa de interés y la inflación durante el periodo 2000-2023</td>
-                                                <td class="px-4 py-3">Isabella Álvarez, Anderson González y Valentina Huertas.</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-4 py-3">Enfoque de mínima varianza y su aplicación en portafolios financieros durante la pandemia</td>
-                                                <td class="px-4 py-3">Yeimy Alarcón, Camilo Castillo y Lina Rozo.</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-4 py-3">Estimadores de volatilidad basados en información de alta frecuencia del Índice de Capitalización Accionaria en Colombia</td>
-                                                <td class="px-4 py-3">Luisa Martínez, Janis Rodríguez y Juliana Fiquitiva.</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-4 py-3">Descentralización fiscal y estabilidad macroeconómica: Contraste no paramétrico de seis países latinoamericanos</td>
-                                                <td class="px-4 py-3">Edward Mora y Juan Bermeo</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                            <div>
-                                <h4 class="text-xl font-semibold text-gray-800 mb-2">Ciencias Biológicas y Agropecuarias</h4>
-                                <p class="mb-4 text-gray-600 font-medium">Moderador: Mario José Pacheco (Salón: 902)</p>
-                                <div class="overflow-x-auto border rounded-lg">
-                                    <table class="w-full text-left table-auto">
-                                        <thead class="bg-gray-200">
-                                            <tr>
-                                                <th class="px-4 py-2 font-semibold">Ponencia</th>
-                                                <th class="px-4 py-2 font-semibold">Conferencista(s)</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="divide-y divide-gray-200 bg-white">
-                                            <tr>
-                                                <td class="px-4 py-3">Análisis de datos obtenidos en un laboratorio de metrología.</td>
-                                                <td class="px-4 py-3">Andrés Caicedo, Juan Diego Gallo y Juan David Parada.</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-4 py-3">Replicación y validación estadística del diseño experimental para el estudio del efecto de tres tipos de abono sintético artificial en la producción de maíz.</td>
-                                                <td class="px-4 py-3">Luisa Martínez, Paula Español y Juliana Fiquitiva.</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-4 py-3">Efecto de la suplementación en vacas de pastoreo sobre la producción, eficiencia del uso y costo-beneficio.</td>
-                                                <td class="px-4 py-3">Luna Pico y Nicole López.</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-4 py-3">Eficacia de un suplemento dietario en perros con osteoartritis.</td>
-                                                <td class="px-4 py-3">Víctor Hernández, Cristofer Montenegro y Juan Oviedo</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                            <div>
-                                <h4 class="text-xl font-semibold text-gray-800 mb-2">Salud Humana y Microbiología</h4>
-                                <p class="mb-4 text-gray-600 font-medium">Moderador: Javier Mauricio Sierra (Salón: 903)</p>
-                                <div class="overflow-x-auto border rounded-lg">
-                                    <table class="w-full text-left table-auto">
-                                        <thead class="bg-gray-200">
-                                            <tr>
-                                                <th class="px-4 py-2 font-semibold">Ponencia</th>
-                                                <th class="px-4 py-2 font-semibold">Conferencista(s)</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="divide-y divide-gray-200 bg-white">
-                                            <tr>
-                                                <td class="px-4 py-3">Statistical Test of Two-Way ANOVA Block Design as a Decision-Making Tool for Analyzing the Growth Results of Staphylococcus aureus Bacteria in Sorghum Media.</td>
-                                                <td class="px-4 py-3">Oscar Ramos, Brayan Barreto y Edwing Navarrete</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-4 py-3">Análisis no paramétrico complementario de un estudio clínico de trasplantados renales</td>
-                                                <td class="px-4 py-3">Maritza Jiménez, Julián Toloza y Camila Mantilla.</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-4 py-3">Las diferencias en la evaluación formativa entre profesores y estudiantes.</td>
-                                                <td class="px-4 py-3">Harold Yesid Funeme</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-4 py-3">Interoperabilidad y unificación de fuentes de información para la salud mental en Colombia.</td>
-                                                <td class="px-4 py-3">Claudia Patricia Ovalle</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                            <div>
-                                <h4 class="text-xl font-semibold text-gray-800 mb-2">Ciencias Sociales y Comportamiento</h4>
-                                <p class="mb-4 text-gray-600 font-medium">Moderador: Óscar Beltrán (Salón: 904)</p>
-                                <div class="overflow-x-auto border rounded-lg">
-                                    <table class="w-full text-left table-auto">
-                                        <thead class="bg-gray-200">
-                                            <tr>
-                                                <th class="px-4 py-2 font-semibold">Ponencia</th>
-                                                <th class="px-4 py-2 font-semibold">Conferencista(s)</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="divide-y divide-gray-200 bg-white">
-                                            <tr>
-                                                <td class="px-4 py-3">Análisis del rendimiento estudiantil aplicando diseño de experimentos y análisis de varianza.</td>
-                                                <td class="px-4 py-3">Sergio Huertas, Alejandra Gordillo y Sergio Prieto</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-4 py-3">Racial stereotypes bias the neural representation of objects towards perceived weapons.</td>
-                                                <td class="px-4 py-3">Laura Camila Rodríguez y Juan David Roa</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-4 py-3">¿Es posible la felicidad en estudiantes universitarios? Un estudio no paramétrico.</td>
-                                                <td class="px-4 py-3">Lincy Barón, Juliana Fiquitiva y Natalia Carrero.</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-4 py-3">Investigación sobre las transformaciones de las maneras del Trabajo de Cuidado no Remunerado (TCnR) en Colombia.</td>
-                                                <td class="px-4 py-3">Camila Saldaña, Angie Molina y Julián Cruz.</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                            <div>
-                                <h4 class="text-xl font-semibold text-gray-800 mb-2">Metodología, Métrica y Estudios Laborales</h4>
-                                <p class="mb-4 text-gray-600 font-medium">Moderador: Juan Carlos Rubriche (Salón: 905)</p>
-                                <div class="overflow-x-auto border rounded-lg">
-                                    <table class="w-full text-left table-auto">
-                                        <thead class="bg-gray-200">
-                                            <tr>
-                                                <th class="px-4 py-2 font-semibold">Ponencia</th>
-                                                <th class="px-4 py-2 font-semibold">Conferencista(s)</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="divide-y divide-gray-200 bg-white">
-                                            <tr>
-                                                <td class="px-4 py-3">Efectos de incrementos sutiles en el IMC sobre las oportunidades laborales.</td>
-                                                <td class="px-4 py-3">Kevin Chaparro y Valentina Muñoz.</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-4 py-3">Análisis de los esfuerzos de divulgación de investigadores y su relación con métricas de publicación.</td>
-                                                <td class="px-4 py-3">Diego Sánchez, Santiago Pacheco y Cristian Puerto.</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-4 py-3">Comparación de temperatura media anual entre regiones de Canadá.</td>
-                                                <td class="px-4 py-3">Paula Sofía Martínez y Lina Marcela Sogamoso.</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="px-4 py-3">Comparación de métodos de calibración y estimación en un muestreo Bernoulli estratificado aplicado al Censo 2024.</td>
-                                                <td class="px-4 py-3">Juan David Monroy Montalvo.</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                <div class="recurso">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E37303" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 17-5-5 5-5"></path><path d="m15 7 5 5-5 5"></path></svg>
+                    <h3>Repositorios de cursillos</h3>
+                    <p>Código, datos y cuadernos de cada cursillo, publicados durante el evento.</p>
+                    <a class="boton boton--claro" href="repositorios.html">Acceder</a>
+                </div>
+                <div class="recurso">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E37303" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M12 16v4"></path><path d="M8 20h8"></path></svg>
+                    <h3>Presentaciones y resúmenes</h3>
+                    <p>Material de las conferencias y los pósters, disponible tras cada sesión.</p>
+                    <a class="boton boton--claro" href="presentaciones.html">Ver materiales</a>
                 </div>
             </div>
-        </section>
-        <section id="recursos" class="py-16 secondary-bg">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12 section-title">Recursos del Evento</h2>
-                <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div class="resource-card fade-in-up">
-                        <h3 class="text-xl font-semibold mb-3 text-center">Convocatoria de Trabajos</h3>
-                        <a href="convocatoria.html" class="cta-button">Ver Convocatoria</a>
-                    </div>
-                    <div class="resource-card fade-in-up" style="animation-delay: 0.15s;">
-                        <h3 class="text-xl font-semibold mb-3 text-center">Repositorios de Cursillos</h3>
-                        <a href="repositorios.html" class="cta-button">Acceder a Repositorios</a>
-                    </div>
-                    <div class="resource-card fade-in-up" style="animation-delay: 0.3s;">
-                        <h3 class="text-xl font-semibold mb-3 text-center">Presentaciones y Resúmenes</h3>
-                        <a href="presentaciones.html" class="cta-button">Ver Materiales</a>
-                    </div>
+            <div class="tira-archivo">
+                <span class="tira-archivo__texto">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#7C8896" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h18v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path><path d="M3 8V5a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v3"></path><path d="M10 12h4"></path></svg>
+                    ¿Buscas la edición 2025? La agenda, ponencias y memorias siguen disponibles.
+                </span>
+                <a href="archivo-2025.html">Ir al archivo 2025 →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccion seccion--noche" id="inscripciones">
+        <div class="contenedor inscripcion">
+            <div class="inscripcion__texto">
+                <span class="cabeza__antetitulo" style="color:#F29200">INSCRIPCIONES</span>
+                <h2>Asegura tu cupo para el 11 y 12 de noviembre</h2>
+                <p>El registro se hace en la plataforma de eventos de la Universidad Santo Tomás. Los cursillos tienen cupo limitado y se asignan en orden de inscripción.</p>
+                <div class="valores">
+                    <span>Valor estudiantes: <strong>[POR CONFIRMAR]</strong></span>
+                    <span>Valor general: <strong>[POR CONFIRMAR]</strong></span>
                 </div>
             </div>
-        </section>
-        
-        <section id="instructivo-inscripcion" class="py-16 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold mb-12 section-title">¿Cómo Inscribirse?</h2>
-                <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
-                    Hemos preparado un video corto para guiarte en el proceso de inscripción y pago. ¡Sigue los pasos y asegura tu cupo!
-                </p>
-                <div class="max-w-4xl mx-auto bg-gray-100 p-2 md:p-4 rounded-lg shadow-xl border">
-                     <video controls class="w-full rounded-lg">
-                        <source src="images/inscripcion.mp4" type="video/mp4">
-                        Tu navegador no soporta el elemento de video.
-                    </video>
-                </div>
-                 <a href="https://inscripcioneventos.usta.edu.co" target="_blank" class="mt-8 inline-block accent-bg font-bold py-3 px-8 rounded-lg text-lg transition duration-300 ease-in-out transform hover:scale-105">
-                    Ir al Formulario de Inscripción
+            <div class="tarjeta-inscripcion">
+                <span class="tarjeta-inscripcion__rotulo">CIERRE DE INSCRIPCIONES</span>
+                <span class="tarjeta-inscripcion__fecha">[FECHA POR CONFIRMAR]</span>
+                <a class="boton boton--primario" href="https://inscripcioneventos.usta.edu.co" target="_blank" rel="noopener">Ir al formulario
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"></path><path d="M20 4 10 14"></path><path d="M18 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4"></path></svg>
                 </a>
+                <small>Se abre en inscripcioneventos.usta.edu.co</small>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="inscripciones" class="py-16 secondary-bg">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold mb-6 section-title">Inscripciones</h2>
-                <div class="flex flex-wrap justify-center gap-8">
-                    <div class="bg-white p-8 rounded-lg shadow-xl w-full lg:w-2/5 fade-in-up">
-                        <h3 class="text-2xl font-semibold accent-text mb-4">Inscripción Regular</h3>
-                        <p class="text-gray-600 mb-4">Hasta el 30 de Septiembre</p>
-                        <table class="w-full text-left table-auto">
-                           </table>
-                    </div>
-                    <div class="bg-white p-8 rounded-lg shadow-xl w-full lg:w-2/5 fade-in-up" style="animation-delay: 0.2s;">
-                        <h3 class="text-2xl font-semibold accent-text mb-4">Inscripción Extemporánea</h3>
-                        <p class="text-gray-600 mb-4">Desde el 1 de Octubre</p>
-                        <table class="w-full text-left table-auto">
-                            </table>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <footer class="footer py-8 text-center">
-            <div class="container mx-auto px-6">
-                <p>&copy; 2025 Statistical DataPulse. Universidad Santo Tomás.</p>
-            </div>
-        </footer>
+</main>
 
-    <script src="scripts.js"></script>
+<footer class="pie">
+    <div class="contenedor">
+        <div class="pie__reja">
+            <div class="pie__marca">
+                <img src="images/logo_evento_blanco.png" alt="Simposio Statistical DataPulse">
+                <p>Simposio de la Facultad de Estadística de la Universidad Santo Tomás, sede principal Bogotá.</p>
+            </div>
+            <div class="pie__columna">
+                <span class="pie__titulo">EL EVENTO</span>
+                <a href="#evento">Sobre el simposio</a>
+                <a href="#programa">Programa</a>
+                <a href="#ponentes">Ponentes</a>
+                <a href="#comite">Comité organizador</a>
+            </div>
+            <div class="pie__columna">
+                <span class="pie__titulo">RECURSOS</span>
+                <a href="convocatoria.html">Convocatoria</a>
+                <a href="repositorios.html">Repositorios</a>
+                <a href="presentaciones.html">Presentaciones</a>
+                <a href="archivo-2025.html">Archivo 2025</a>
+            </div>
+            <div class="pie__columna">
+                <span class="pie__titulo">CONTACTO</span>
+                <span>Campus Doctor Angélico</span>
+                <span>Cra 9 #72-90, Bogotá</span>
+                <span>[CORREO POR CONFIRMAR]</span>
+            </div>
+        </div>
+        <div class="pie__cierre">
+            <small>© 2026 Statistical DataPulse · Universidad Santo Tomás</small>
+            <div class="pie__sellos">
+                <img class="usta" src="images/logo_usta_blanco.png" alt="Universidad Santo Tomás">
+                <span class="caja"><img src="images/logo_elbosque.jpg" alt="Universidad El Bosque"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="scripts.js"></script>
 </body>
 </html>

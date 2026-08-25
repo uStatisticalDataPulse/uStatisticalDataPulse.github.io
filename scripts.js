@@ -1,64 +1,68 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+/* Statistical DataPulse 2026 — interacciones mínimas.
+   El desplazamiento suave lo hace CSS (scroll-behavior), no hace falta JS. */
+document.addEventListener('DOMContentLoaded', function () {
 
-    if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+    /* ---------- Menú móvil ---------- */
+    var boton = document.getElementById('boton-menu');
+    var menu = document.getElementById('menu-movil');
+
+    if (boton && menu) {
+        boton.addEventListener('click', function () {
+            var abierto = menu.classList.toggle('abierto');
+            boton.setAttribute('aria-expanded', String(abierto));
+            boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+        });
+
+        menu.querySelectorAll('a').forEach(function (enlace) {
+            enlace.addEventListener('click', function () {
+                menu.classList.remove('abierto');
+                boton.setAttribute('aria-expanded', 'false');
+                boton.setAttribute('aria-label', 'Abrir menú');
+            });
         });
     }
 
-    // Smooth scroll for navigation links on the main page
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            // Check if the link is on the same page
-            const currentPath = window.location.pathname.split('/').pop();
-            const linkPath = this.pathname.split('/').pop();
-            
-            if (currentPath === linkPath || linkPath === '') {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
+    /* ---------- Pestañas de día del programa ----------
+       Sin JS se ven los dos paneles seguidos, que también es correcto;
+       aquí sólo se convierte en pestañas. */
+    var listas = document.querySelectorAll('[role="tablist"]');
 
-                // Hide mobile menu after click
-                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-            }
+    listas.forEach(function (lista) {
+        var pestanas = Array.prototype.slice.call(lista.querySelectorAll('[role="tab"]'));
+        if (!pestanas.length) return;
+
+        var paneles = pestanas.map(function (p) {
+            return document.getElementById(p.getAttribute('aria-controls'));
         });
-    });
 
-    // --- CÓDIGO ACTUALIZADO PARA EL ACORDEÓN DE LA AGENDA ---
-    const allAccordionItems = document.querySelectorAll('.accordion-item');
-
-    allAccordionItems.forEach(item => {
-        const toggle = item.querySelector('.accordion-toggle');
-        const content = item.querySelector('.accordion-content');
-        const icon = item.querySelector('.accordion-icon');
-
-        toggle.addEventListener('click', () => {
-            const isOpen = item.classList.contains('is-open');
-
-            // 1. Cerrar todos los items
-            allAccordionItems.forEach(i => {
-                i.classList.remove('is-open');
-                i.querySelector('.accordion-content').style.display = 'none';
-                i.querySelector('.accordion-icon').style.transform = 'rotate(0deg)';
+        function activar(indice, mover) {
+            pestanas.forEach(function (pestana, i) {
+                var activa = i === indice;
+                pestana.setAttribute('aria-selected', String(activa));
+                pestana.setAttribute('tabindex', activa ? '0' : '-1');
+                if (paneles[i]) paneles[i].hidden = !activa;
             });
+            if (mover) pestanas[indice].focus();
+        }
 
-            // 2. Si el item clickeado no estaba abierto, abrirlo
-            if (!isOpen) {
-                item.classList.add('is-open');
-                content.style.display = 'block';
-                icon.style.transform = 'rotate(180deg)';
-            }
+        pestanas.forEach(function (pestana, i) {
+            pestana.addEventListener('click', function () { activar(i, false); });
+            pestana.addEventListener('keydown', function (evento) {
+                var salto = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[evento.key];
+                if (salto) {
+                    evento.preventDefault();
+                    activar((i + salto + pestanas.length) % pestanas.length, true);
+                } else if (evento.key === 'Home') {
+                    evento.preventDefault();
+                    activar(0, true);
+                } else if (evento.key === 'End') {
+                    evento.preventDefault();
+                    activar(pestanas.length - 1, true);
+                }
+            });
         });
+
+        var inicial = pestanas.findIndex(function (p) { return p.getAttribute('aria-selected') === 'true'; });
+        activar(inicial === -1 ? 0 : inicial, false);
     });
-    // --- FIN DEL CÓDIGO DEL ACORDEÓN ---
 });

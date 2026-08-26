@@ -163,7 +163,7 @@ a:hover { color: var(--naranja); }
 .aliados__interior { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 44px; padding: 26px 0; }
 .aliados__bloque { display: flex; align-items: center; gap: 18px; }
 .aliados__rotulo { font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .18em; color: var(--sobre-noche-tenue); }
-.aliados__usta { height: 42px; width: auto; }
+.aliados__usta { height: 43px; width: auto; }
 .aliados__tarjeta { padding: 7px 12px; background: #fff; border-radius: 7px; display: flex; }
 .aliados__tarjeta img { height: 52px; width: auto; }
 .aliados__separador { width: 1px; height: 44px; background: var(--linea-noche); }

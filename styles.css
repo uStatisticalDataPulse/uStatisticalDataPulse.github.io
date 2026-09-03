@@ -183,13 +183,12 @@ a:hover { color: var(--naranja); }
 .cabeza--partida > div { display: flex; flex-direction: column; gap: 10px; }
 
 /* ---------- Sobre el evento ---------- */
-.evento__reja { display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 56px; align-items: center; }
-.evento__poster { width: 100%; border-radius: 14px; box-shadow: 0 18px 40px rgba(17,24,32,.22); }
-.evento__texto { display: flex; flex-direction: column; gap: 20px; }
+.evento__banner { width: 100%; border-radius: 14px; box-shadow: 0 18px 40px rgba(17,24,32,.22); margin-bottom: 40px; }
+.evento__texto { display: flex; flex-direction: column; gap: 20px; max-width: 780px; margin-bottom: 36px; }
 .evento__entrada { font-size: 17.5px; line-height: 1.62; color: var(--tinta-media); }
 .evento__parrafo { font-size: 16px; line-height: 1.65; color: var(--tinta-suave); }
 
-.fichas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 8px; }
+.fichas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
 .ficha { display: flex; flex-direction: column; gap: 7px; padding: 18px 20px; background: var(--blanco); border: 1px solid var(--linea); border-radius: 11px; }
 .ficha__rotulo { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .16em; color: var(--tenue); }
 .ficha strong { font-size: 16px; font-weight: 600; color: var(--tinta); }
@@ -335,7 +334,7 @@ a:hover { color: var(--naranja); }
    Adaptación a pantallas menores
    ===================================================================== */
 @media (max-width: 1080px) {
-    .evento__reja { grid-template-columns: 320px minmax(0, 1fr); gap: 36px; }
+    .fichas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .personas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .comite { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .pie__reja { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
@@ -363,8 +362,8 @@ a:hover { color: var(--naranja); }
     .aliados__rotulo { width: 96px; flex-shrink: 0; }
     .aliados__nota { margin-left: 0; }
 
-    .evento__reja { grid-template-columns: minmax(0, 1fr); gap: 24px; }
-    .evento__poster { order: -1; }
+    .evento__banner { margin-bottom: 24px; }
+    .evento__texto { margin-bottom: 24px; }
     .evento__entrada { font-size: 15.5px; }
 
     .cabeza { margin-bottom: 28px; }

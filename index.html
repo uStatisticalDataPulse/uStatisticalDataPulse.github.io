@@ -51,7 +51,7 @@
             <a href="#comite">Comité</a>
             <a href="#convocatoria">Convocatoria</a>
             <a href="#recursos">Recursos</a>
-            <a class="boton boton--primario boton--pequeno barra__cta" href="https://inscripcioneventos.usta.edu.co" target="_blank" rel="noopener">Inscríbete</a>
+            <a class="boton boton--fantasma boton--pequeno barra__cta" href="#inscripciones">Inscripciones</a>
         </nav>
         <button class="barra__hamburguesa" id="boton-menu" type="button" aria-expanded="false" aria-controls="menu-movil" aria-label="Abrir menú">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
@@ -64,7 +64,7 @@
         <a href="#comite">Comité</a>
         <a href="#convocatoria">Convocatoria</a>
         <a href="#recursos">Recursos</a>
-        <a href="https://inscripcioneventos.usta.edu.co" target="_blank" rel="noopener">Inscríbete</a>
+        <a href="#inscripciones">Inscripciones</a>
     </nav>
 </header>
 
@@ -93,11 +93,15 @@
             </p>
 
             <div class="hero__acciones">
-                <a class="boton boton--primario" href="https://inscripcioneventos.usta.edu.co" target="_blank" rel="noopener">Inscríbete aquí
+                <a class="boton boton--primario" href="#programa">Ver el programa
                     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                 </a>
-                <a class="boton boton--fantasma" href="#programa">Ver el programa</a>
+                <a class="boton boton--fantasma" href="#inscripciones">Inscripciones</a>
             </div>
+            <p class="hero__estado">
+                <span class="hero__punto" aria-hidden="true"></span>
+                Las inscripciones aún no están abiertas. Anunciaremos aquí la fecha de apertura.
+            </p>
         </div>
     </section>
 
@@ -386,20 +390,21 @@
         <div class="contenedor inscripcion">
             <div class="inscripcion__texto">
                 <span class="cabeza__antetitulo" style="color:#F29200">INSCRIPCIONES</span>
-                <h2>Asegura tu cupo para el 11 y 12 de noviembre</h2>
-                <p>El registro se hace en la plataforma de eventos de la Universidad Santo Tomás. Los cursillos tienen cupo limitado y se asignan en orden de inscripción.</p>
+                <h2>Las inscripciones abren pronto</h2>
+                <p>El registro se hará por la plataforma de eventos de la Universidad Santo Tomás. Publicaremos el enlace en esta página apenas se habilite. Los cursillos tendrán cupo limitado y se asignan en orden de inscripción.</p>
                 <div class="valores">
                     <span>Valor estudiantes: <strong>[POR CONFIRMAR]</strong></span>
                     <span>Valor general: <strong>[POR CONFIRMAR]</strong></span>
                 </div>
             </div>
-            <div class="tarjeta-inscripcion">
-                <span class="tarjeta-inscripcion__rotulo">CIERRE DE INSCRIPCIONES</span>
-                <span class="tarjeta-inscripcion__fecha">[FECHA POR CONFIRMAR]</span>
-                <a class="boton boton--primario" href="https://inscripcioneventos.usta.edu.co" target="_blank" rel="noopener">Ir al formulario
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
-                </a>
-                <small>Se abre en inscripcioneventos.usta.edu.co</small>
+            <div class="tarjeta-inscripcion tarjeta-inscripcion--espera">
+                <!-- Inscripciones desactivadas mientras la USTA habilita el evento 2026.
+         Para reactivar: devolver el enlace https://inscripcioneventos.usta.edu.co a los botones
+         de la barra, del hero y de la tarjeta de esta sección. -->
+                <span class="tarjeta-inscripcion__rotulo">ESTADO</span>
+                <span class="tarjeta-inscripcion__fecha">Aún no abren</span>
+                <p class="tarjeta-inscripcion__nota">Apertura y cierre: <strong>[FECHAS POR CONFIRMAR]</strong></p>
+                <p class="tarjeta-inscripcion__nota">Publicaremos aquí el enlace y las fechas en cuanto la Universidad habilite el registro.</p>
             </div>
         </div>
     </section>

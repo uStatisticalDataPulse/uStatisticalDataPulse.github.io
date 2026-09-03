@@ -423,3 +423,10 @@ a:hover { color: var(--naranja); }
     .bloque-proximamente { padding: 24px; }
     .bloque-proximamente .boton { width: 100%; }
 }
+
+/* ---------- Estado de inscripciones aún no abiertas ---------- */
+.hero__estado { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--sobre-noche-suave); }
+.hero__punto { width: 8px; height: 8px; border-radius: 50%; background: var(--naranja); flex-shrink: 0; }
+.tarjeta-inscripcion--espera .tarjeta-inscripcion__fecha { color: var(--crema); }
+.tarjeta-inscripcion__nota { font-size: 13.5px; line-height: 1.55; color: var(--sobre-noche-tenue); }
+.tarjeta-inscripcion__nota strong { color: var(--sobre-noche); font-weight: 600; }

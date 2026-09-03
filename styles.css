@@ -384,9 +384,15 @@ a:hover { color: var(--naranja); }
     .aviso-pendiente .boton { width: 100%; }
 
     .personas { grid-template-columns: minmax(0, 1fr); }
-    .persona { flex-direction: row; align-items: center; text-align: left; padding: 16px 18px; gap: 15px; }
-    .persona__retrato { width: 60px; height: 60px; font-size: 19px; flex-shrink: 0; }
-    .persona .etiqueta { order: 3; }
+    .persona {
+        display: grid; grid-template-columns: 60px minmax(0, 1fr);
+        column-gap: 15px; row-gap: 5px; align-items: center;
+        text-align: left; padding: 16px 18px;
+    }
+    .persona__retrato { grid-column: 1; grid-row: 1 / span 3; width: 60px; height: 60px; font-size: 19px; }
+    .persona .etiqueta { grid-column: 2; grid-row: 1; justify-self: start; }
+    .persona__nombre  { grid-column: 2; grid-row: 2; }
+    .persona__rol     { grid-column: 2; grid-row: 3; }
 
     .comite { grid-template-columns: minmax(0, 1fr); }
     .recursos { grid-template-columns: minmax(0, 1fr); }

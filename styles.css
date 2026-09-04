@@ -5,6 +5,11 @@
    sale del "AQUÍ" de las piezas de campaña 2026.
    ===================================================================== */
 
+/* Los paneles de pestañas se ocultan con el atributo [hidden] desde
+   scripts.js. Sin este !important, la regla .agenda { display: flex }
+   gana sobre el [hidden] del navegador y los dos días se ven a la vez. */
+[hidden] { display: none !important; }
+
 :root {
     /* Oscuros */
     --noche:        #000D1C;

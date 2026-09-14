@@ -532,3 +532,10 @@ a:hover { color: var(--naranja); }
 .nota-carpeta strong { font-weight: 600; color: var(--tinta-media); }
 
 @media (max-width: 860px) { .pasos { grid-template-columns: minmax(0, 1fr); } }
+
+/* Requisito de cuenta de Google, justo debajo de los botones de postular.
+   Va antes del clic a propósito: quien no tenga cuenta se topa con un muro
+   de inicio de sesión y abandona sin escribirle a nadie. */
+.aviso-sesion { display: flex; gap: 11px; align-items: flex-start; margin-top: 22px; font-size: 14px; line-height: 1.6; color: var(--tinta-suave); }
+.aviso-sesion svg { flex-shrink: 0; margin-top: 3px; }
+.aviso-sesion strong { font-weight: 600; color: var(--tinta-media); }

@@ -527,3 +527,8 @@ a:hover { color: var(--naranja); }
 .aviso-sesion { display: flex; gap: 11px; align-items: flex-start; margin-top: 22px; font-size: 14px; line-height: 1.6; color: var(--tinta-suave); }
 .aviso-sesion svg { flex-shrink: 0; margin-top: 3px; }
 .aviso-sesion strong { font-weight: 600; color: var(--tinta-media); }
+
+/* La fecha de cierre va en su propia línea. En la misma, el salto de gris
+   tenue y regular a casi blanco y negrita apretaba «el 11» hasta leerse
+   como una palabra: el espacio de 3,2 px no aguanta ese contraste. */
+.tarjeta-inscripcion__nota--fecha strong { display: block; margin-top: 3px; }

@@ -512,24 +512,12 @@ a:hover { color: var(--naranja); }
 .valores a:hover { border-color: var(--naranja-hondo); color: #fff; }
 .valores a strong { color: var(--crema); font-weight: 600; margin-left: 5px; }
 
-/* ---------- Envío por carpeta compartida ----------
-   La carpeta de Drive no captura metadatos, así que el nombre del
-   archivo hace de metadato: por eso cada modalidad muestra su prefijo. */
-.modalidad__archivo { display: flex; flex-direction: column; gap: 5px; padding: 12px 14px; border-radius: 9px; background: var(--papel-3); border: 1px solid var(--linea); }
-.modalidad__archivo span { font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .12em; color: var(--tenue); }
-.modalidad__archivo code { font-family: var(--mono); font-size: 13px; font-weight: 600; color: var(--tinta-media); overflow-wrap: anywhere; }
-
+/* ---------- Cómo enviar: los tres pasos ---------- */
 .pasos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; counter-reset: paso; list-style: none; padding: 0; margin: 0; }
 .pasos li { counter-increment: paso; display: flex; flex-direction: column; gap: 9px; padding: 24px; background: var(--blanco); border: 1px solid var(--linea); border-radius: 12px; }
 .pasos li::before { content: counter(paso); display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--noche); color: #fff; font-family: var(--display); font-size: 15px; font-weight: 700; }
 .pasos strong { font-size: 16px; font-weight: 600; color: var(--tinta); }
 .pasos p { font-size: 14.5px; line-height: 1.55; color: var(--tinta-suave); }
-.pasos code { font-family: var(--mono); font-size: 12.5px; background: var(--papel-3); padding: 2px 6px; border-radius: 4px; color: var(--tinta-media); white-space: nowrap; }
-
-.nota-carpeta { display: flex; gap: 12px; align-items: flex-start; margin-top: 26px; padding: 18px 22px; border-radius: 11px; background: var(--papel-3); border: 1px solid var(--linea-fuerte); }
-.nota-carpeta svg { flex-shrink: 0; margin-top: 1px; }
-.nota-carpeta p { font-size: 14px; line-height: 1.6; color: var(--tinta-suave); }
-.nota-carpeta strong { font-weight: 600; color: var(--tinta-media); }
 
 @media (max-width: 860px) { .pasos { grid-template-columns: minmax(0, 1fr); } }
 

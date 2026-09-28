@@ -368,7 +368,14 @@ a:hover { color: var(--naranja-texto-hover); }
 
 @media (max-width: 860px) {
     .seccion { padding: 60px 0; }
-    .barra__enlaces { display: none; }
+    /* En móvil la barra conserva solo «Inscríbete»: la mayoría entra por
+       celular desde WhatsApp y así la inscripción queda a un toque en toda
+       la página. El resto de enlaces vive en el menú de la hamburguesa. */
+    .barra__interior { gap: 8px; }
+    .barra__enlaces { margin-left: auto; }
+    .barra__enlaces a:not(.barra__cta) { display: none; }
+    .barra__cta { margin-left: 0; }
+    .barra__enlaces .barra__cta { padding: 0 16px; }
     .barra__hamburguesa { display: flex; }
 
     .hero__imagen { width: 100%; height: 320px; inset: 0 0 auto 0; opacity: .55; }

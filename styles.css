@@ -89,6 +89,8 @@ a:hover { color: var(--naranja); }
 .salto-contenido:focus { left: 0; top: 0; }
 
 .contenedor { width: min(100% - 44px, 1120px); margin-inline: auto; }
+/* Para lo que no debe partirse al final de línea: «#72- / 90», «10 / de noviembre». */
+.sin-corte { white-space: nowrap; }
 
 /* ---------- Barra de navegación ---------- */
 .barra { position: sticky; top: 0; z-index: 100; background: var(--noche); }
@@ -102,6 +104,12 @@ a:hover { color: var(--naranja); }
 }
 .barra__enlaces a:hover { background: var(--noche-3); color: #fff; }
 .barra__cta { margin-left: 14px; }
+/* .barra__enlaces a pesa más que .boton--primario: sin esto el botón naranja
+   hereda el gris claro de los enlaces (contraste 1,5:1) y en hover se vuelve
+   azul noche. */
+.barra__enlaces .barra__cta { padding: 0 20px; font-weight: 700; }
+.barra__enlaces .boton--primario, .barra__enlaces .boton--primario:hover { color: #10161E; }
+.barra__enlaces .boton--primario:hover { background: var(--naranja-hover); }
 .barra__hamburguesa {
     display: none; align-items: center; justify-content: center;
     width: 44px; height: 44px; padding: 0; border: 0; background: none; cursor: pointer; color: #fff;
@@ -303,12 +311,10 @@ a:hover { color: var(--naranja); }
 
 /* ---------- Inscripciones ---------- */
 .inscripcion { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 48px; }
-.inscripcion__texto { display: flex; flex-direction: column; gap: 14px; max-width: 620px; }
+.inscripcion__texto { display: flex; flex-direction: column; gap: 14px; flex: 1 1 380px; max-width: 620px; }
 .inscripcion__texto h2 { font-size: clamp(26px, 3.4vw, 36px); color: #fff; line-height: 1.18; }
 .inscripcion__texto p { font-size: 16px; line-height: 1.6; color: var(--sobre-noche); }
 .valores { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
-.valores span { padding: 9px 14px; border-radius: 7px; background: var(--noche-3); border: 1px solid var(--linea-noche); font-size: 13.5px; color: var(--sobre-noche); }
-.valores strong { color: var(--crema); font-weight: 600; }
 .tarjeta-inscripcion {
     display: flex; flex-direction: column; gap: 12px; flex: 0 1 356px;
     padding: 32px; background: var(--noche-3); border: 1px solid var(--linea-noche); border-radius: 15px;
@@ -405,6 +411,7 @@ a:hover { color: var(--naranja); }
     .tira-archivo { flex-direction: column; align-items: flex-start; }
 
     .inscripcion { flex-direction: column; align-items: stretch; gap: 28px; }
+    .inscripcion__texto { flex: none; }
     .tarjeta-inscripcion { flex: 1 1 auto; padding: 24px; }
 
     .pie__reja { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
@@ -434,7 +441,7 @@ a:hover { color: var(--naranja); }
     .bloque-proximamente .boton { width: 100%; }
 }
 
-/* ---------- Estado de inscripciones aún no abiertas ---------- */
+/* ---------- Línea de estado bajo los botones del hero ---------- */
 .hero__estado { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--sobre-noche-suave); }
 .hero__punto { width: 8px; height: 8px; border-radius: 50%; background: var(--naranja); flex-shrink: 0; }
 .tarjeta-inscripcion--espera .tarjeta-inscripcion__fecha { color: var(--crema); }
@@ -532,3 +539,54 @@ a:hover { color: var(--naranja); }
    tenue y regular a casi blanco y negrita apretaba «el 11» hasta leerse
    como una palabra: el espacio de 3,2 px no aguanta ese contraste. */
 .tarjeta-inscripcion__nota--fecha strong { display: block; margin-top: 3px; }
+
+/* ---------- Inscripciones: una fila por perfil ----------
+   Cada perfil tiene dos enlaces (comunidad USTA y externo) salvo "Otros
+   participantes", que tiene tarifa única. La tarjeta entera es el enlace:
+   el naranja de "Inscribirme" es lo único de color porque es lo pulsable. */
+.visualmente-oculto {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.tarjeta-inscripcion__fecha--limite { color: var(--naranja); text-wrap: balance; line-height: 1.2; }
+
+.tarifas { display: flex; flex-direction: column; gap: 10px; list-style: none; padding: 0; margin: 48px 0 0; }
+.tarifa { display: grid; grid-template-columns: 240px repeat(2, minmax(0, 1fr)); gap: 10px; align-items: stretch; }
+.tarifa + .tarifa { padding-top: 10px; border-top: 1px solid var(--linea-noche); }
+.tarifa__perfil { display: flex; flex-direction: column; justify-content: center; gap: 4px; }
+.tarifa__perfil h3 { font-size: 17px; font-weight: 600; line-height: 1.3; color: #fff; letter-spacing: -0.01em; }
+.tarifa__perfil p { font-size: 13.5px; line-height: 1.5; color: var(--sobre-noche-suave); }
+.tarifa--unica .tarifa__opcion { grid-column: span 2; }
+
+.tarifa__opcion {
+    position: relative;
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 16px; row-gap: 3px; align-items: center;
+    min-height: 76px; padding: 14px 20px;
+    background: var(--noche-3); border: 1px solid var(--linea-noche); border-radius: 11px;
+    color: #fff; transition: border-color .2s ease, background-color .2s ease;
+}
+.tarifa__opcion:hover { background: #0E2239; border-color: var(--naranja); color: #fff; }
+.tarifa__quien { grid-column: 1; font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--sobre-noche-suave); }
+.tarifa__valor { grid-column: 1; font-family: var(--display); font-size: 24px; font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; color: #fff; }
+.tarifa__accion { grid-column: 2; grid-row: 1 / span 2; display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 700; color: var(--naranja); }
+.tarifa__opcion:hover .tarifa__accion svg { transform: translateX(2px); }
+.tarifa__accion svg { transition: transform .2s ease; }
+
+.inscripcion__notas { display: flex; flex-direction: column; gap: 12px; list-style: none; padding: 0; margin: 36px 0 0; max-width: 760px; }
+.inscripcion__notas li { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; line-height: 1.6; color: var(--sobre-noche); }
+.inscripcion__notas svg { flex-shrink: 0; margin-top: 3px; color: var(--sobre-noche-tenue); }
+.inscripcion__notas strong { color: #fff; font-weight: 700; }
+/* Enlace en línea: el relleno vertical agranda el área táctil a 44 px sin mover el texto. */
+.inscripcion__notas a { padding-block: 13px; color: var(--naranja); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.inscripcion__notas a:hover { color: #fff; }
+
+@media (max-width: 860px) {
+    .tarifas { margin-top: 36px; gap: 14px; }
+    .tarifa { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .tarifa + .tarifa { padding-top: 14px; }
+    .tarifa__perfil { grid-column: 1 / -1; }
+    .tarifa--unica .tarifa__opcion { grid-column: 1 / -1; }
+    .tarifa__opcion { grid-template-columns: minmax(0, 1fr); padding: 14px 16px; }
+    .tarifa__accion { grid-column: 1; grid-row: auto; margin-top: 6px; }
+    .tarifa__valor { font-size: 22px; }
+}

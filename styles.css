@@ -504,6 +504,7 @@ a:hover { color: var(--naranja); }
 .fechas-clave__cuando { font-family: var(--mono); font-size: 13.5px; font-weight: 600; color: var(--tinta-media); }
 .fechas-clave__cuando.es-limite { color: var(--naranja-hondo); }
 .fechas-clave__que { font-size: 15px; line-height: 1.5; color: var(--tinta-suave); }
+.fechas-clave__que a { padding-block: 13px; text-decoration: underline; text-underline-offset: 3px; }
 .fechas-clave .marcador { font-family: var(--mono); font-size: 12.5px; color: var(--tenue); border: 1px dashed var(--linea-punto); border-radius: 5px; padding: 3px 8px; }
 
 @media (max-width: 860px) {

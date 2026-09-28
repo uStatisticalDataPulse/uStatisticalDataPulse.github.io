@@ -23,7 +23,13 @@
     --naranja-hondo: #E37303;
     --crema:         #FFE6BE;
     --crema-fondo:   #FFF0DA;
-    --crema-tinta:   #A85E00;
+    --crema-tinta:   #A65400;
+    /* Naranja para TEXTO sobre fondos claros. #E37303 da 2,6-3,1:1 como texto
+       (WCAG AA pide 4,5:1); este es el mismo tono, más oscuro, y da 4,5:1 en
+       el fondo más difícil (#EFEBE3) y 5,4:1 en blanco. #E37303 y #F29200
+       quedan para botones, rayas, bordes e iconos, donde no hace falta. */
+    --naranja-texto:       #A65400;
+    --naranja-texto-hover: #7A4200;
 
     /* Claros */
     --papel:        #F7F4EF;
@@ -80,8 +86,8 @@ body {
 h1, h2, h3, h4 { margin: 0; font-family: var(--display); font-weight: 700; text-wrap: pretty; letter-spacing: -0.02em; }
 p { margin: 0; text-wrap: pretty; }
 img { max-width: 100%; height: auto; display: block; }
-a { color: var(--naranja-hondo); text-decoration: none; }
-a:hover { color: var(--naranja); }
+a { color: var(--naranja-texto); text-decoration: none; }
+a:hover { color: var(--naranja-texto-hover); }
 :focus-visible { outline: 3px solid var(--naranja); outline-offset: 3px; border-radius: 4px; }
 
 .salto-contenido {
@@ -107,6 +113,9 @@ a:hover { color: var(--naranja); }
 }
 .barra__enlaces a:hover { background: var(--noche-3); color: #fff; }
 .barra__cta { margin-left: 14px; }
+/* Página actual (o la sección a la que pertenece) en el menú. */
+.barra__enlaces a[aria-current] { color: #fff; text-decoration: underline; text-decoration-color: var(--naranja); text-decoration-thickness: 2px; text-underline-offset: 7px; }
+.menu-movil a[aria-current] { color: #fff; box-shadow: inset 3px 0 0 var(--naranja); }
 /* .barra__enlaces a pesa más que .boton--primario: sin esto el botón naranja
    hereda el gris claro de los enlaces (contraste 1,5:1) y en hover se vuelve
    azul noche. */
@@ -123,6 +132,7 @@ a:hover { color: var(--naranja); }
     color: var(--sobre-noche); font-size: 15px; font-weight: 500;
     border-bottom: 1px solid var(--linea-noche);
 }
+.menu-movil a:hover { background: var(--noche-3); color: #fff; }
 .menu-movil.abierto { display: block; }
 /* Si se abre en móvil y luego se ensancha la ventana, que no quede colgado. */
 @media (min-width: 861px) { .menu-movil.abierto { display: none; } }
@@ -194,7 +204,7 @@ a:hover { color: var(--naranja); }
 .seccion--noche  { background: var(--noche); color: #fff; }
 
 .cabeza { display: flex; flex-direction: column; gap: 10px; margin-bottom: 42px; }
-.cabeza__antetitulo { font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .2em; color: var(--naranja-hondo); }
+.cabeza__antetitulo { font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .2em; color: var(--naranja-texto); }
 .cabeza h2 { font-size: clamp(25px, 3.2vw, 34px); }
 .cabeza__raya { width: 56px; height: 3px; background: var(--naranja); border-radius: 2px; margin-top: 6px; }
 .cabeza--partida { flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
@@ -390,7 +400,7 @@ a:hover { color: var(--naranja); }
 
     .franja, .franja--pausa, .franja--paralela { grid-template-columns: minmax(0, 1fr); gap: 8px; }
     .franja--paralela > .franja__hora { padding-top: 0; }
-    .franja__hora { color: var(--naranja-hondo); }
+    .franja__hora { color: var(--naranja-texto); }
     .franja--pausa { display: flex; align-items: center; gap: 12px; }
     .rutas { grid-template-columns: minmax(0, 1fr); }
     .curso .curso__ruta { color: var(--azul-hondo); }
@@ -478,7 +488,7 @@ a:hover { color: var(--naranja); }
     background: var(--crema-fondo); border: 1px solid #F2DFBE;
 }
 .limite__rotulo { font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .16em; color: var(--crema-tinta); }
-.limite__fecha { font-family: var(--display); font-size: clamp(21px, 3vw, 26px); font-weight: 700; color: var(--naranja-hondo); }
+.limite__fecha { font-family: var(--display); font-size: clamp(21px, 3vw, 26px); font-weight: 700; color: var(--naranja-texto); }
 .limite__nota { font-size: 14px; line-height: 1.5; color: var(--tinta-suave); margin-left: auto; max-width: 330px; }
 
 .modalidades { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
@@ -486,7 +496,7 @@ a:hover { color: var(--naranja); }
     display: flex; flex-direction: column; gap: 12px; padding: 30px;
     background: var(--blanco); border: 1px solid var(--linea); border-radius: 13px;
 }
-.modalidad__rotulo { display: flex; align-items: center; gap: 9px; font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .14em; color: var(--naranja-hondo); }
+.modalidad__rotulo { display: flex; align-items: center; gap: 9px; font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .14em; color: var(--naranja-texto); }
 .modalidad h3 { font-size: 21px; }
 .modalidad__duracion { align-self: flex-start; padding: 5px 11px; border-radius: 6px; background: var(--azul-fondo); font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--azul-hondo); }
 .modalidad p { font-size: 14.5px; line-height: 1.6; color: var(--tinta-suave); }
@@ -502,7 +512,7 @@ a:hover { color: var(--naranja); }
 .fechas-clave li { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 20px; align-items: baseline; padding: 16px 4px; border-top: 1px solid var(--linea); }
 .fechas-clave li:last-child { border-bottom: 1px solid var(--linea); }
 .fechas-clave__cuando { font-family: var(--mono); font-size: 13.5px; font-weight: 600; color: var(--tinta-media); }
-.fechas-clave__cuando.es-limite { color: var(--naranja-hondo); }
+.fechas-clave__cuando.es-limite { color: var(--naranja-texto); }
 .fechas-clave__que { font-size: 15px; line-height: 1.5; color: var(--tinta-suave); }
 .fechas-clave__que a { padding-block: 13px; text-decoration: underline; text-underline-offset: 3px; }
 .fechas-clave .marcador { font-family: var(--mono); font-size: 12.5px; color: var(--tenue); border: 1px dashed var(--linea-punto); border-radius: 5px; padding: 3px 8px; }

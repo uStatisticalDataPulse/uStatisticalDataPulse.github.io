@@ -38,13 +38,15 @@
     --tinta:        #111820;
     --tinta-media:  #2C3743;
     --tinta-suave:  #4E5B69;
-    --tenue:        #7C8896;
+    /* --tenue y --sobre-noche-tenue se oscurecieron/aclararon el 28-09-2026:
+       daban 3,3:1 y 4,0:1 en texto pequeño; ahora pasan el 4,5:1 de WCAG AA. */
+    --tenue:        #5F6B78;
     --apagado:      #9AA4B0;
 
     /* Sobre oscuro */
     --sobre-noche:       #C3CCD6;
     --sobre-noche-suave: #8A97A5;
-    --sobre-noche-tenue: #6D7B8A;
+    --sobre-noche-tenue: #808D9B;
 
     /* Azul de cursillos */
     --azul:        #2B8FCB;
@@ -58,7 +60,8 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+/* La barra es fija (76 px): sin esto tapa el inicio de lo que se enlaza con #ancla. */
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
@@ -121,6 +124,8 @@ a:hover { color: var(--naranja); }
     border-bottom: 1px solid var(--linea-noche);
 }
 .menu-movil.abierto { display: block; }
+/* Si se abre en móvil y luego se ensancha la ventana, que no quede colgado. */
+@media (min-width: 861px) { .menu-movil.abierto { display: none; } }
 
 /* ---------- Botones ---------- */
 .boton {
@@ -335,7 +340,7 @@ a:hover { color: var(--naranja); }
 .pie__columna a, .pie__columna span { display: flex; align-items: center; min-height: 44px; font-size: 14px; color: var(--sobre-noche); }
 .pie__columna a:hover { color: #fff; }
 .pie__cierre { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--linea-noche); }
-.pie__cierre small { font-size: 13px; color: #55626F; }
+.pie__cierre small { font-size: 13px; color: var(--sobre-noche-tenue); }
 .pie__sellos { display: flex; align-items: center; gap: 14px; }
 .pie__sellos img.usta { height: 30px; width: auto; opacity: .75; }
 .pie__sellos .caja { padding: 5px 9px; background: #fff; border-radius: 5px; display: flex; }

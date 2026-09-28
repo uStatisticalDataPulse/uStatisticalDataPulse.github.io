@@ -10,10 +10,12 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Statistical DataPulse">
     <meta property="og:locale" content="es_CO">
+    <link rel="canonical" href="https://ustatisticaldatapulse.github.io/convocatoria.html">
     <meta property="og:url" content="https://ustatisticaldatapulse.github.io/convocatoria.html">
     <meta property="og:title" content="Convocatoria de trabajos · Statistical DataPulse 2026">
     <meta property="og:description" content="Postula una comunicación corta de 20 minutos o un póster. Resumen de máximo 300 palabras en PDF hasta el 11 de octubre; resultados el 19 de octubre de 2026.">
     <meta property="og:image" content="https://ustatisticaldatapulse.github.io/images/og-2026.jpg">
+    <meta property="og:image:alt" content="StatDataPulse 2026: IA aplicada a la ciencia de datos y el modelado. 11 y 12 de noviembre, Campus Doctor Angélico.">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
@@ -203,7 +205,7 @@
             <div class="tarjeta-inscripcion tarjeta-inscripcion--espera">
                 <span class="tarjeta-inscripcion__rotulo">QUEDAN</span>
                 <span class="tarjeta-inscripcion__fecha" id="cuenta-regresiva">— días</span>
-                <p class="tarjeta-inscripcion__nota tarjeta-inscripcion__nota--fecha">para el cierre de recepción<strong>11 de octubre de 2026</strong></p>
+                <p class="tarjeta-inscripcion__nota tarjeta-inscripcion__nota--fecha">para el cierre de recepción <strong>11 de octubre de 2026</strong></p>
                 <a class="boton boton--primario boton--pequeno" href="#postular">Ir a postular</a>
             </div>
         </div>
@@ -216,7 +218,7 @@
             <small>© 2026 Statistical DataPulse · Universidad Santo Tomás</small>
             <div class="pie__sellos">
                 <img class="usta" src="images/logo_usta_blanco.png" alt="Universidad Santo Tomás">
-                <a href="archivo-2025.html" style="font-size:14px;color:#C3CCD6">Archivo 2025</a>
+                <a href="archivo-2025.html" style="display:inline-flex;align-items:center;min-height:44px;font-size:14px;color:#C3CCD6">Archivo 2025</a>
             </div>
         </div>
     </div>
@@ -224,16 +226,35 @@
 
 <script src="scripts.js"></script>
 <script>
-    /* Días que faltan para el cierre de recepción. Si la fecha ya pasó,
-       la tarjeta lo dice en vez de mostrar un número negativo. */
+    /* Días que faltan para el cierre de recepción. El 11 de octubre todavía
+       se reciben resúmenes (el formulario cierra a las 23:59), así que ese
+       día la tarjeta dice «Último día», no «Cerrada». Pasada la fecha lo
+       dice y retira el botón, en vez de mostrar un número negativo. */
     (function () {
         var caja = document.getElementById('cuenta-regresiva');
         if (!caja) return;
+        var tarjeta = caja.parentNode;
+        var rotulo = tarjeta.querySelector('.tarjeta-inscripcion__rotulo');
+        var nota = tarjeta.querySelector('.tarjeta-inscripcion__nota--fecha');
+        var boton = tarjeta.querySelector('.boton');
         var cierre = new Date(2026, 9, 11);
         var hoy = new Date();
         hoy = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
         var dias = Math.round((cierre - hoy) / 86400000);
-        caja.textContent = dias > 1 ? dias + ' días' : dias === 1 ? '1 día' : 'Cerrada';
+        if (dias > 1) {
+            caja.textContent = dias + ' días';
+        } else if (dias === 1) {
+            caja.textContent = '1 día';
+        } else if (dias === 0) {
+            rotulo.textContent = 'HOY ES EL';
+            caja.textContent = 'Último día';
+            nota.firstChild.nodeValue = 'de recepción de resúmenes ';
+        } else {
+            rotulo.textContent = 'RECEPCIÓN';
+            caja.textContent = 'Cerrada';
+            nota.firstChild.nodeValue = 'Fecha de cierre: ';
+            if (boton) boton.hidden = true;
+        }
     })();
 </script>
 </body>

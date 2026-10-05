@@ -291,8 +291,9 @@ a:hover { color: var(--naranja-texto-hover); }
 .persona__nombre { font-size: 17px; font-weight: 600; color: var(--tinta); }
 .persona__rol { font-size: 14px; line-height: 1.5; color: var(--tinta-suave); }
 
-/* El invitado principal ocupa toda la fila, con su biografía. Las otras
-   cuatro tarjetas quedan debajo, en una fila de cuatro (o dos por dos). */
+/* Los dos invitados (charla inaugural y plenaria) ocupan cada uno toda la
+   fila, con su biografía. Las otras cuatro tarjetas quedan debajo, en una
+   fila de cuatro (o dos por dos). */
 .persona--destacada {
     grid-column: 1 / -1;
     display: grid; grid-template-columns: 132px minmax(0, 1fr);

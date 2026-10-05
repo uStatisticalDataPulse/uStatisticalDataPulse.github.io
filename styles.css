@@ -291,6 +291,22 @@ a:hover { color: var(--naranja-texto-hover); }
 .persona__nombre { font-size: 17px; font-weight: 600; color: var(--tinta); }
 .persona__rol { font-size: 14px; line-height: 1.5; color: var(--tinta-suave); }
 
+/* El invitado principal ocupa toda la fila, con su biografía. Las otras
+   cuatro tarjetas quedan debajo, en una fila de cuatro (o dos por dos). */
+.persona--destacada {
+    grid-column: 1 / -1;
+    display: grid; grid-template-columns: 132px minmax(0, 1fr);
+    column-gap: 34px; row-gap: 8px; align-items: start; justify-items: start;
+    text-align: left; padding: 34px 38px;
+}
+.persona--destacada .persona__retrato { grid-column: 1; grid-row: 1 / span 5; width: 132px; height: 132px; font-size: 40px; }
+.persona--destacada > :not(.persona__retrato) { grid-column: 2; }
+.persona--destacada .persona__nombre { font-family: var(--display); font-size: 26px; font-weight: 700; line-height: 1.2; }
+.persona--destacada .persona__rol { font-size: 15.5px; font-weight: 600; color: var(--tinta-media); }
+.persona__bio { display: grid; gap: 10px; max-width: 74ch; margin-top: 6px; }
+.persona__bio p { font-size: 15px; line-height: 1.6; color: var(--tinta-suave); }
+.persona__enlace { margin-top: 8px; }
+
 .nota-linea {
     display: flex; align-items: flex-start; gap: 12px; margin-top: 22px;
     padding: 18px 24px; border: 1px dashed var(--linea-punto); border-radius: 11px;
@@ -425,6 +441,16 @@ a:hover { color: var(--naranja-texto-hover); }
     .persona .etiqueta { grid-column: 2; grid-row: 1; justify-self: start; }
     .persona__nombre  { grid-column: 2; grid-row: 2; }
     .persona__rol     { grid-column: 2; grid-row: 3; }
+    /* La etiqueta del destacado es larga: va arriba, a todo el ancho,
+       para que no se parta en dos líneas junto al retrato. */
+    .persona--destacada { grid-template-columns: 72px minmax(0, 1fr); padding: 22px 20px; row-gap: 6px; }
+    .persona--destacada .etiqueta { grid-column: 1 / -1; grid-row: 1; margin-bottom: 6px; }
+    .persona--destacada .persona__retrato { grid-row: 2 / span 2; width: 72px; height: 72px; font-size: 22px; }
+    .persona--destacada .persona__nombre { grid-row: 2; align-self: end; font-size: 21px; }
+    .persona--destacada .persona__rol { grid-row: 3; align-self: start; font-size: 14.5px; }
+    .persona--destacada .persona__bio,
+    .persona--destacada .persona__enlace { grid-column: 1 / -1; }
+    .persona__bio p { font-size: 14.5px; }
 
     .comite { grid-template-columns: minmax(0, 1fr); }
     .recursos { grid-template-columns: minmax(0, 1fr); }

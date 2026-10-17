@@ -251,13 +251,28 @@ a:hover { color: var(--naranja-texto-hover); }
 .franja--paralela { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 20px; align-items: start; }
 .franja--paralela > .franja__hora { padding-top: 20px; }
 .rutas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+/* Desde el cronograma del 16-10-2026 cada bloque tiene tres salas en paralelo. */
+.rutas--tres { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 .curso { display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; background: var(--papel-2); border: 1px solid var(--linea); border-left: 3px solid var(--azul); border-radius: 10px; }
 .curso__ruta { font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .14em; color: var(--azul-hondo); }
 .curso__titulo { font-size: 16.5px; font-weight: 600; color: var(--tinta); }
 .curso__quien { font-size: 14.5px; color: var(--tinta-suave); }
-/* Sesión que reúne las dos rutas: ocupa el ancho de ambas columnas. */
-.curso--ambas { grid-column: 1 / -1; }
+.curso__donde { font-size: 13.5px; color: var(--tenue); }
+/* Las conferencias en paralelo usan la misma tarjeta, con el naranja de los invitados. */
+.curso--conferencia { border-left-color: var(--naranja); }
+.curso--conferencia .curso__ruta { color: var(--crema-tinta); }
+
+.programa__guia {
+    display: flex; align-items: flex-start; gap: 12px; max-width: 78ch; margin-bottom: 22px;
+    font-size: 14.5px; line-height: 1.55; color: var(--tinta-suave);
+}
+.programa__guia svg { flex-shrink: 0; margin-top: 2px; }
+/* Dato que el comité aún no publica, dentro de una franja: borde punteado. */
+.franja__pendiente {
+    margin-top: 4px; padding: 8px 12px; border: 1px dashed var(--linea-punto); border-radius: 8px;
+    font-size: 13.5px; line-height: 1.5; color: var(--tenue);
+}
 
 .pendiente { background: var(--blanco); border: 1px dashed var(--linea-punto); border-left-width: 1px; }
 .pendiente .curso__ruta { color: var(--apagado); }
@@ -278,7 +293,12 @@ a:hover { color: var(--naranja-texto-hover); }
 .franja__encabezado { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 
 /* ---------- Personas ---------- */
-.personas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.personas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: start; }
+.personas__grupo {
+    grid-column: 1 / -1; margin-top: 18px;
+    font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .18em; color: var(--tenue);
+}
+.personas__grupo:first-child { margin-top: 0; }
 .persona {
     display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center;
     padding: 30px 22px; background: var(--blanco); border: 1px solid var(--linea); border-radius: 13px;
@@ -289,13 +309,29 @@ a:hover { color: var(--naranja-texto-hover); }
     background: var(--papel-3); border: 3px solid var(--naranja);
     font-family: var(--display); font-size: 28px; font-weight: 700; color: var(--tenue);
 }
+img.persona__retrato { display: block; flex-shrink: 0; }
 .persona__retrato--cursillo { border-color: var(--azul); }
 .persona__nombre { font-size: 17px; font-weight: 600; color: var(--tinta); }
 .persona__rol { font-size: 14px; line-height: 1.5; color: var(--tinta-suave); }
+.persona__sesion { font-size: 14px; line-height: 1.5; font-style: italic; color: var(--tinta-media); }
 
-/* Los dos invitados (charla inaugural y plenaria) ocupan cada uno toda la
-   fila, con su biografía. Las otras cuatro tarjetas quedan debajo, en una
-   fila de cuatro (o dos por dos). */
+/* «Ver perfil»: naranja porque se pulsa; 44 px de alto como mínimo. */
+.persona__perfil { align-self: stretch; text-align: left; }
+.persona__perfil summary {
+    display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 4px;
+    list-style: none; cursor: pointer;
+    font-size: 14.5px; font-weight: 600; color: var(--naranja-texto);
+}
+.persona__perfil summary::-webkit-details-marker { display: none; }
+.persona__perfil summary:hover { color: var(--naranja-texto-hover); }
+.persona__perfil summary svg { transition: transform .2s ease; }
+.persona__perfil[open] summary svg { transform: rotate(180deg); }
+.persona:not(.persona--destacada) .persona__perfil summary { display: flex; justify-content: center; }
+.persona__perfil .persona__bio { margin-top: 4px; }
+.persona__perfil .persona__bio p { font-size: 14.5px; }
+
+/* La charla inaugural ocupa toda la fila, con la biografía a la vista.
+   Las demás tarjetas van de tres en tres, con la biografía plegada. */
 .persona--destacada {
     grid-column: 1 / -1;
     display: grid; grid-template-columns: 132px minmax(0, 1fr);
@@ -428,7 +464,7 @@ a:hover { color: var(--naranja-texto-hover); }
     .franja--paralela > .franja__hora { padding-top: 0; }
     .franja__hora { color: var(--naranja-texto); }
     .franja--pausa { display: flex; align-items: center; gap: 12px; }
-    .rutas { grid-template-columns: minmax(0, 1fr); }
+    .rutas, .rutas--tres { grid-template-columns: minmax(0, 1fr); }
     .curso .curso__ruta { color: var(--azul-hondo); }
 
     .aviso-pendiente { flex-direction: column; align-items: stretch; padding: 24px; }
@@ -444,6 +480,9 @@ a:hover { color: var(--naranja-texto-hover); }
     .persona .etiqueta { grid-column: 2; grid-row: 1; justify-self: start; }
     .persona__nombre  { grid-column: 2; grid-row: 2; }
     .persona__rol     { grid-column: 2; grid-row: 3; }
+    .persona__sesion  { grid-column: 1 / -1; grid-row: 4; margin-top: 6px; }
+    .persona__perfil  { grid-column: 1 / -1; grid-row: 5; }
+    .persona:not(.persona--destacada) .persona__perfil summary { justify-content: flex-start; }
     /* La etiqueta del destacado es larga: va arriba, a todo el ancho,
        para que no se parta en dos líneas junto al retrato. */
     .persona--destacada { grid-template-columns: 72px minmax(0, 1fr); padding: 22px 20px; row-gap: 6px; }
@@ -499,23 +538,7 @@ a:hover { color: var(--naranja-texto-hover); }
 .tarjeta-inscripcion__nota { font-size: 13.5px; line-height: 1.55; color: var(--sobre-noche-tenue); }
 .tarjeta-inscripcion__nota strong { color: var(--sobre-noche); font-weight: 600; }
 
-/* ---------- Convocatoria de trabajos 2026 ----------
-   El aviso de la portada es temporal: retirarlo cuando cierre la
-   recepción de resúmenes (11 de octubre de 2026). Está marcado con un
-   comentario en index.html. */
-.aviso-convocatoria { background: var(--crema-fondo); border-bottom: 1px solid #F2DFBE; }
-.aviso-convocatoria__interior {
-    display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-    gap: 6px 18px; padding: 10px 0; text-align: center;
-}
-.aviso-convocatoria__texto { display: flex; align-items: center; gap: 10px; font-size: 14.5px; line-height: 1.45; color: var(--tinta); }
-.aviso-convocatoria__texto strong { font-weight: 600; color: var(--crema-tinta); }
-.aviso-convocatoria a {
-    display: inline-flex; align-items: center; gap: 7px; min-height: 44px;
-    font-size: 14px; font-weight: 600; color: var(--tinta); text-decoration: underline;
-    text-underline-offset: 3px; text-decoration-color: var(--linea-fuerte);
-}
-.aviso-convocatoria a:hover { color: var(--crema-tinta); text-decoration-color: currentColor; }
+/* ---------- Convocatoria de trabajos 2026 ---------- */
 
 /* Cierre de recepción. El naranja aquí es la fecha, no un adorno. */
 .limite {
@@ -558,7 +581,6 @@ a:hover { color: var(--naranja-texto-hover); }
     .limite { padding: 20px; }
     .limite__nota { margin-left: 0; max-width: none; }
     .fechas-clave li { grid-template-columns: minmax(0, 1fr); gap: 6px; }
-    .aviso-convocatoria__interior { padding: 8px 0; }
 }
 
 /* El chip de contacto de la convocatoria es enlazable: necesita los 44 px

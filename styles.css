@@ -657,6 +657,7 @@ img.persona__retrato { display: block; flex-shrink: 0; }
 .paso-cursillos__texto { display: flex; flex-direction: column; gap: 10px; flex: 1 1 420px; max-width: 720px; }
 .paso-cursillos h3 { font-size: 22px; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; color: #fff; }
 .paso-cursillos p { font-size: 15px; line-height: 1.6; color: var(--sobre-noche); }
+.paso-cursillos strong { color: #fff; font-weight: 700; }
 .paso-cursillos .boton { flex-shrink: 0; }
 
 .inscripcion__notas { display: flex; flex-direction: column; gap: 12px; list-style: none; padding: 0; margin: 36px 0 0; max-width: 760px; }

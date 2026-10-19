@@ -171,6 +171,30 @@ a:hover { color: var(--naranja-texto-hover); }
 .hero__lugar svg { flex-shrink: 0; margin-top: 2px; }
 .hero__lugar strong { color: #fff; font-weight: 600; }
 .hero__acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 4px; }
+/* «Agregar al calendario» y «Cómo llegar»: enlaces de texto, por debajo de
+   los botones en jerarquía, pero junto a la fecha y el lugar que completan. */
+.hero__utiles { display: flex; flex-wrap: wrap; align-items: center; gap: 0 26px; margin-top: -16px; }
+.hero__enlace, .hero__utiles .calendario summary {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 44px;
+    font-size: 14.5px; font-weight: 600; color: #fff;
+}
+.hero__enlace:hover, .hero__utiles .calendario summary:hover { color: var(--naranja); }
+
+/* Menú de calendario: un <details>, así abre y cierra sin JS. scripts.js lo
+   cierra además al elegir, al tocar fuera o con Escape. */
+.calendario { position: relative; }
+.calendario summary { list-style: none; cursor: pointer; }
+.calendario summary::-webkit-details-marker { display: none; }
+.calendario__flecha { transition: transform .2s ease; }
+.calendario[open] .calendario__flecha { transform: rotate(180deg); }
+.calendario__menu {
+    position: absolute; top: 100%; left: 0; z-index: 20;
+    display: flex; flex-direction: column; min-width: 250px; padding: 6px;
+    background: var(--blanco); border: 1px solid var(--linea); border-radius: 10px;
+    box-shadow: 0 14px 34px rgba(0,13,28,.28);
+}
+.calendario__menu a { display: flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: 7px; font-size: 14.5px; font-weight: 600; color: var(--tinta); }
+.calendario__menu a:hover { background: var(--papel-3); color: var(--tinta); }
 
 .fechas { display: flex; align-items: center; gap: 14px; }
 .fechas__cajas { display: flex; align-items: center; gap: 10px; }
@@ -220,6 +244,15 @@ a:hover { color: var(--naranja-texto-hover); }
 .ficha__rotulo { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .16em; color: var(--tenue); }
 .ficha strong { font-size: 16px; font-weight: 600; color: var(--tinta); }
 .ficha span.detalle { font-size: 14px; color: var(--tinta-suave); }
+/* Enlace al pie de la ficha (calendario, mapa): naranja porque se pulsa.
+   margin-top: auto los alinea abajo aunque las fichas tengan distinto texto;
+   el margen negativo descuenta parte del alto táctil de 44 px. */
+.ficha__enlace, .calendario--ficha { align-self: flex-start; margin-top: auto; margin-bottom: -10px; }
+.ficha__enlace, .calendario--ficha summary {
+    display: inline-flex; align-items: center; gap: 6px; min-height: 44px;
+    font-size: 14px; font-weight: 600; color: var(--naranja-texto);
+}
+.ficha__enlace:hover, .calendario--ficha summary:hover { color: var(--naranja-texto-hover); }
 
 /* ---------- Programa ---------- */
 .pestanas { display: flex; gap: 8px; padding: 5px; background: var(--papel-3); border-radius: 10px; margin-bottom: 26px; }

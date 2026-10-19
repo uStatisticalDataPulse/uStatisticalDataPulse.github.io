@@ -1,0 +1,40 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Universidad Santo Tomas//Statistical DataPulse 2026//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Statistical DataPulse 2026
+X-WR-TIMEZONE:America/Bogota
+BEGIN:VEVENT
+UID:statdatapulse-2026-dia-11@ustatisticaldatapulse.github.io
+DTSTAMP:20261018T120000Z
+DTSTART:20261111T120000Z
+DTEND:20261112T003000Z
+SUMMARY:Statistical DataPulse 2026 · Día 1
+LOCATION:Universidad Santo Tomás\, Campus Doctor Angélico\, Cra 9 #72-90
+ \, Bogotá
+DESCRIPTION:Simposio de la Facultad de Estadística de la Universidad Santo
+  Tomás: IA aplicada a la ciencia de datos y el modelado.\nMiércoles 11 d
+ e noviembre\, de 7:00 a 19:30: registro\, charlas\, cursillos y conferenci
+ as.\nPrograma: https://ustatisticaldatapulse.github.io/#programa
+URL:https://ustatisticaldatapulse.github.io/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:statdatapulse-2026-dia-12@ustatisticaldatapulse.github.io
+DTSTAMP:20261018T120000Z
+DTSTART:20261112T130000Z
+DTEND:20261112T230000Z
+SUMMARY:Statistical DataPulse 2026 · Día 2
+LOCATION:Universidad Santo Tomás\, Campus Doctor Angélico\, Cra 9 #72-90
+ \, Bogotá
+DESCRIPTION:Simposio de la Facultad de Estadística de la Universidad Santo
+  Tomás: IA aplicada a la ciencia de datos y el modelado.\nJueves 12 de no
+ viembre\, de 8:00 a 18:00: comunicaciones\, cursillos\, pósteres y cierre
+ .\nPrograma: https://ustatisticaldatapulse.github.io/#programa
+URL:https://ustatisticaldatapulse.github.io/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

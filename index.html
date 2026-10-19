@@ -45,6 +45,7 @@
         ],
         "location": {
             "@type": "Place",
+            "hasMap": "https://www.google.com/maps/search/?api=1&query=Universidad%20Santo%20Tom%C3%A1s%20-%20Edificio%20Doctor%20Ang%C3%A9lico%2C%20Bogot%C3%A1",
             "name": "Campus Doctor Angélico, Universidad Santo Tomás",
             "address": {
                 "@type": "PostalAddress",
@@ -190,6 +191,18 @@
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F29200" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 <span><strong>Campus Doctor Angélico</strong> · <span class="sin-corte">Cra 9 #72-90</span>, Bogotá</span>
             </p>
+            <!-- Calendario: Google Calendar (evento de dos días) o el .ics con un evento
+                 por día, en hora de Bogotá. «Cómo llegar» abre Google Maps en el edificio. -->
+            <div class="hero__utiles">
+                <details class="calendario">
+                    <summary><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F29200" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 19h6"></path><path d="M16 2v4"></path><path d="M19 16v6"></path><path d="M21 12.598V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8.5"></path><path d="M3 10h18"></path><path d="M8 2v4"></path></svg>Agregar al calendario <svg class="calendario__flecha" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
+                    <div class="calendario__menu">
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Statistical%20DataPulse%202026&amp;dates=20261111/20261113&amp;details=Simposio%20de%20la%20Facultad%20de%20Estad%C3%ADstica%20de%20la%20Universidad%20Santo%20Tom%C3%A1s%3A%20IA%20aplicada%20a%20la%20ciencia%20de%20datos%20y%20el%20modelado.%0AMi%C3%A9rcoles%2011%20de%20noviembre%2C%20de%207%3A00%20a%2019%3A30.%20Jueves%2012%20de%20noviembre%2C%20de%208%3A00%20a%2018%3A00.%0APrograma%3A%20https%3A%2F%2Fustatisticaldatapulse.github.io%2F%23programa&amp;location=Universidad%20Santo%20Tom%C3%A1s%2C%20Campus%20Doctor%20Ang%C3%A9lico%2C%20Cra%209%20%2372-90%2C%20Bogot%C3%A1" target="_blank" rel="noopener">Google Calendar</a>
+                        <a href="statdatapulse-2026.ics">Apple, Outlook u otro (.ics)</a>
+                    </div>
+                </details>
+                <a class="hero__enlace" href="https://www.google.com/maps/search/?api=1&amp;query=Universidad%20Santo%20Tom%C3%A1s%20-%20Edificio%20Doctor%20Ang%C3%A9lico%2C%20Bogot%C3%A1" target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F29200" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>Cómo llegar</a>
+            </div>
 
             <div class="hero__acciones">
                 <a class="boton boton--primario" href="#inscripciones">Inscríbete
@@ -237,6 +250,13 @@
                             FECHA
                         </span>
                         <strong>11 y 12 de noviembre, 2026</strong>
+                        <details class="calendario calendario--ficha">
+                            <summary>Agregar al calendario <svg class="calendario__flecha" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
+                            <div class="calendario__menu">
+                                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Statistical%20DataPulse%202026&amp;dates=20261111/20261113&amp;details=Simposio%20de%20la%20Facultad%20de%20Estad%C3%ADstica%20de%20la%20Universidad%20Santo%20Tom%C3%A1s%3A%20IA%20aplicada%20a%20la%20ciencia%20de%20datos%20y%20el%20modelado.%0AMi%C3%A9rcoles%2011%20de%20noviembre%2C%20de%207%3A00%20a%2019%3A30.%20Jueves%2012%20de%20noviembre%2C%20de%208%3A00%20a%2018%3A00.%0APrograma%3A%20https%3A%2F%2Fustatisticaldatapulse.github.io%2F%23programa&amp;location=Universidad%20Santo%20Tom%C3%A1s%2C%20Campus%20Doctor%20Ang%C3%A9lico%2C%20Cra%209%20%2372-90%2C%20Bogot%C3%A1" target="_blank" rel="noopener">Google Calendar</a>
+                                <a href="statdatapulse-2026.ics">Apple, Outlook u otro (.ics)</a>
+                            </div>
+                        </details>
                     </div>
                     <div class="ficha">
                         <span class="ficha__rotulo">
@@ -245,6 +265,7 @@
                         </span>
                         <strong>Campus Doctor Angélico</strong>
                         <span class="detalle"><span class="sin-corte">Cra 9 #72-90</span>, Bogotá</span>
+                        <a class="ficha__enlace" href="https://www.google.com/maps/search/?api=1&amp;query=Universidad%20Santo%20Tom%C3%A1s%20-%20Edificio%20Doctor%20Ang%C3%A9lico%2C%20Bogot%C3%A1" target="_blank" rel="noopener">Cómo llegar <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
                     </div>
                     <div class="ficha">
                         <span class="ficha__rotulo">
@@ -950,7 +971,7 @@
             <div class="pie__columna">
                 <span class="pie__titulo">CONTACTO</span>
                 <span>Campus Doctor Angélico</span>
-                <span>Cra 9 #72-90, Bogotá</span>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Universidad%20Santo%20Tom%C3%A1s%20-%20Edificio%20Doctor%20Ang%C3%A9lico%2C%20Bogot%C3%A1" target="_blank" rel="noopener">Cra 9 #72-90, Bogotá</a>
                 <a href="mailto:javiersierra@usta.edu.co">javiersierra@usta.edu.co</a>
             </div>
         </div>

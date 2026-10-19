@@ -32,6 +32,30 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    /* ---------- «Agregar al calendario» ----------
+       Es un <details>, que sin JS abre y cierra con su propio botón. Aquí
+       además se cierra al elegir una opción, al tocar fuera o con Escape. */
+    var calendarios = document.querySelectorAll('details.calendario');
+
+    if (calendarios.length) {
+        document.addEventListener('click', function (evento) {
+            calendarios.forEach(function (calendario) {
+                if (calendario.open && (!calendario.contains(evento.target) || evento.target.closest('.calendario__menu a'))) {
+                    calendario.open = false;
+                }
+            });
+        });
+        document.addEventListener('keydown', function (evento) {
+            if (evento.key !== 'Escape') return;
+            calendarios.forEach(function (calendario) {
+                if (calendario.open) {
+                    calendario.open = false;
+                    calendario.querySelector('summary').focus();
+                }
+            });
+        });
+    }
+
     /* ---------- Sección actual en la barra ----------
        Marca con aria-current el enlace de la sección que cruza el centro de la
        pantalla; el estilo ya está en styles.css. «Inscríbete» no se marca: es

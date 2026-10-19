@@ -270,6 +270,16 @@ a:hover { color: var(--naranja-texto-hover); }
 .programa__guia svg { flex-shrink: 0; margin-top: 2px; }
 /* Mismo truco que en las notas de inscripción: 44 px de área táctil sin mover el texto. */
 .programa__guia a { padding-block: 13px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+/* Llamado al final del programa, con el recuadro de .tira-archivo. */
+.programa__llamado {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 28px;
+    margin-top: 26px; padding: 20px 28px; background: var(--papel-3); border-radius: 11px;
+}
+.programa__llamado p { flex: 1 1 320px; font-size: 15.5px; line-height: 1.55; color: var(--tinta-suave); }
+.programa__llamado strong { color: var(--tinta); font-weight: 600; }
+.programa__llamado-acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+.programa__llamado-enlace { display: inline-flex; align-items: center; min-height: 44px; font-size: 14.5px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
 /* Dato que el comité aún no publica, dentro de una franja: borde punteado. */
 .franja__pendiente {
     margin-top: 4px; padding: 8px 12px; border: 1px dashed var(--linea-punto); border-radius: 8px;
@@ -466,6 +476,8 @@ img.persona__retrato { display: block; flex-shrink: 0; }
     .franja--paralela > .franja__hora { padding-top: 0; }
     .franja__hora { color: var(--naranja-texto); }
     .franja--pausa { display: flex; align-items: center; gap: 12px; }
+    .programa__llamado { padding: 20px; }
+    .programa__llamado-acciones, .programa__llamado-acciones .boton { width: 100%; }
     .rutas, .rutas--tres { grid-template-columns: minmax(0, 1fr); }
     .curso .curso__ruta { color: var(--azul-hondo); }
 
@@ -630,7 +642,7 @@ img.persona__retrato { display: block; flex-shrink: 0; }
 .tarifa { display: grid; grid-template-columns: 240px repeat(2, minmax(0, 1fr)); gap: 10px; align-items: stretch; }
 .tarifa + .tarifa { padding-top: 10px; border-top: 1px solid var(--linea-noche); }
 .tarifa__perfil { display: flex; flex-direction: column; justify-content: center; gap: 4px; }
-.tarifa__perfil h3 { font-size: 17px; font-weight: 600; line-height: 1.3; color: #fff; letter-spacing: -0.01em; }
+.tarifa__perfil h4 { font-size: 17px; font-weight: 600; line-height: 1.3; color: #fff; letter-spacing: -0.01em; }
 .tarifa__perfil p { font-size: 13.5px; line-height: 1.5; color: var(--sobre-noche-suave); }
 .tarifa--unica .tarifa__opcion { grid-column: span 2; }
 
@@ -648,6 +660,22 @@ img.persona__retrato { display: block; flex-shrink: 0; }
 .tarifa__opcion:hover .tarifa__accion svg { transform: translateX(2px); }
 .tarifa__accion svg { transition: transform .2s ease; }
 
+/* Los dos pasos de la inscripción: 1, pagar en la plataforma; 2, reservar el
+   cursillo en el formulario. El número es el mismo círculo de .pasos de la
+   convocatoria, en naranja porque aquí va sobre noche. */
+.paso-titulo { display: flex; align-items: center; gap: 14px; }
+.paso-titulo h3 { font-size: 22px; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; color: #fff; }
+.paso-numero {
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    width: 30px; height: 30px; border-radius: 50%; background: var(--naranja);
+    font-family: var(--display); font-size: 15px; font-weight: 700; color: #10161E;
+}
+.paso-uno { display: flex; flex-direction: column; gap: 10px; margin-top: 48px; }
+.paso-uno + .tarifas { margin-top: 22px; }
+/* El texto de cada paso arranca donde arranca su título, a la derecha del número. */
+.paso-uno__nota { max-width: 760px; padding-left: 44px; font-size: 15px; line-height: 1.6; color: var(--sobre-noche); }
+.paso-uno__nota strong { color: #fff; font-weight: 700; }
+
 /* Reserva de cursillos: el paso que sigue a pagar en la plataforma. Mismo recuadro que la tarjeta de la fecha. */
 .paso-cursillos {
     display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px;
@@ -655,8 +683,7 @@ img.persona__retrato { display: block; flex-shrink: 0; }
     background: var(--noche-3); border: 1px solid var(--linea-noche); border-radius: 15px;
 }
 .paso-cursillos__texto { display: flex; flex-direction: column; gap: 10px; flex: 1 1 420px; max-width: 720px; }
-.paso-cursillos h3 { font-size: 22px; font-weight: 700; line-height: 1.25; letter-spacing: -0.01em; color: #fff; }
-.paso-cursillos p { font-size: 15px; line-height: 1.6; color: var(--sobre-noche); }
+.paso-cursillos p { padding-left: 44px; font-size: 15px; line-height: 1.6; color: var(--sobre-noche); }
 .paso-cursillos strong { color: #fff; font-weight: 700; }
 .paso-cursillos .boton { flex-shrink: 0; }
 
@@ -677,6 +704,9 @@ img.persona__retrato { display: block; flex-shrink: 0; }
     .tarifa__opcion { grid-template-columns: minmax(0, 1fr); padding: 14px 16px; }
     .tarifa__accion { grid-column: 1; grid-row: auto; margin-top: 6px; }
     .tarifa__valor { font-size: 22px; }
+    .paso-uno { margin-top: 36px; }
+    .paso-titulo h3 { font-size: 20px; }
+    .paso-uno__nota, .paso-cursillos p { padding-left: 0; }
     .paso-cursillos { padding: 24px; }
     .paso-cursillos .boton { width: 100%; justify-content: center; }
 }

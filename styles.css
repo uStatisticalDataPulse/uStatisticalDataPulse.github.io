@@ -270,6 +270,31 @@ a:hover { color: var(--naranja-texto-hover); }
 .programa__guia svg { flex-shrink: 0; margin-top: 2px; }
 /* Mismo truco que en las notas de inscripción: 44 px de área táctil sin mover el texto. */
 .programa__guia a { padding-block: 13px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.programa__guia-cuerpo { display: flex; flex-direction: column; gap: 10px; }
+
+/* Horario de los grupos de cursillos: dos filas, una por grupo. */
+.horario-grupos { border-collapse: collapse; font-size: 14px; }
+.horario-grupos th, .horario-grupos td { padding: 7px 22px 7px 0; text-align: left; border-bottom: 1px solid var(--linea); }
+.horario-grupos thead th { font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--tenue); }
+.horario-grupos tbody th { font-weight: 600; color: var(--tinta); white-space: nowrap; }
+.horario-grupos tbody th span { margin-left: 6px; font-weight: 400; color: var(--tenue); }
+.horario-grupos td { font-family: var(--mono); font-size: 13.5px; font-variant-numeric: tabular-nums; color: var(--tinta-media); white-space: nowrap; }
+
+/* El nombre del ponente lleva a su tarjeta. Subrayado discreto para no
+   competir con el título; el relleno da el área táctil sin mover el texto. */
+.franja__quien a, .curso__quien a {
+    padding-block: 12px; color: inherit;
+    text-decoration: underline; text-decoration-color: var(--linea-punto); text-underline-offset: 3px;
+}
+.franja__quien a:hover, .curso__quien a:hover { color: var(--naranja-texto); text-decoration-color: currentColor; }
+
+/* «Ver el jueves» al final de cada día: en celular las pestañas quedan muy arriba. */
+.agenda__cambio { align-self: flex-end; margin-top: 8px; }
+.agenda__cambio--atras { align-self: flex-start; }
+
+/* Durante el evento, la franja en curso (scripts.js). */
+.etiqueta--ahora { display: block; width: max-content; margin-top: 8px; background: var(--naranja); color: #10161E; }
+.franja.franja--ahora { background: var(--crema-fondo); border-color: #F2DFBE; border-left-color: var(--naranja); }
 /* Llamado al final del programa, con el recuadro de .tira-archivo. */
 .programa__llamado {
     display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 28px;
@@ -340,6 +365,7 @@ img.persona__retrato { display: block; flex-shrink: 0; }
 .persona__perfil[open] summary svg { transform: rotate(180deg); }
 .persona:not(.persona--destacada) .persona__perfil summary { display: flex; justify-content: center; }
 .persona__perfil .persona__bio { margin-top: 4px; }
+.persona__reserva { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 4px; font-size: 14.5px; font-weight: 600; }   /* mismo relleno que «Ver perfil», para que alineen */
 .persona__perfil .persona__bio p { font-size: 14.5px; }
 
 /* La charla inaugural ocupa toda la fila, con la biografía a la vista.
@@ -475,6 +501,10 @@ img.persona__retrato { display: block; flex-shrink: 0; }
     .franja, .franja--pausa, .franja--paralela { grid-template-columns: minmax(0, 1fr); gap: 8px; }
     .franja--paralela > .franja__hora { padding-top: 0; }
     .franja__hora { color: var(--naranja-texto); }
+    .etiqueta--ahora { display: inline-block; margin: 0 0 0 10px; }
+    .agenda__cambio { align-self: stretch; }
+    .horario-grupos th, .horario-grupos td { padding-right: 14px; }
+    .horario-grupos tbody th span { display: block; margin-left: 0; font-size: 12.5px; }
     .franja--pausa { display: flex; align-items: center; gap: 12px; }
     .programa__llamado { padding: 20px; }
     .programa__llamado-acciones, .programa__llamado-acciones .boton { width: 100%; }
@@ -496,6 +526,7 @@ img.persona__retrato { display: block; flex-shrink: 0; }
     .persona__rol     { grid-column: 2; grid-row: 3; }
     .persona__sesion  { grid-column: 1 / -1; grid-row: 4; margin-top: 6px; }
     .persona__perfil  { grid-column: 1 / -1; grid-row: 5; }
+    .persona__reserva { grid-column: 1 / -1; grid-row: 6; justify-self: start; }
     .persona:not(.persona--destacada) .persona__perfil summary { justify-content: flex-start; }
     /* La etiqueta del destacado es larga: va arriba, a todo el ancho,
        para que no se parta en dos líneas junto al retrato. */

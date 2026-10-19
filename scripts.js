@@ -13,12 +13,22 @@ document.addEventListener('DOMContentLoaded', function () {
             boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
         });
 
+        function cerrarMenu() {
+            menu.classList.remove('abierto');
+            boton.setAttribute('aria-expanded', 'false');
+            boton.setAttribute('aria-label', 'Abrir menú');
+        }
+
         menu.querySelectorAll('a').forEach(function (enlace) {
-            enlace.addEventListener('click', function () {
-                menu.classList.remove('abierto');
-                boton.setAttribute('aria-expanded', 'false');
-                boton.setAttribute('aria-label', 'Abrir menú');
-            });
+            enlace.addEventListener('click', cerrarMenu);
+        });
+
+        /* Escape lo cierra y devuelve el foco al botón, como un menú de verdad. */
+        document.addEventListener('keydown', function (evento) {
+            if (evento.key === 'Escape' && menu.classList.contains('abierto')) {
+                cerrarMenu();
+                boton.focus();
+            }
         });
     }
 

@@ -190,7 +190,7 @@ a:hover { color: var(--naranja-texto-hover); }
 .aliados { background: var(--noche-2); border-top: 1px solid var(--linea-noche); }
 .aliados__interior { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 44px; padding: 26px 0; }
 .aliados__bloque { display: flex; align-items: center; gap: 18px; }
-.aliados__rotulo { font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .18em; color: var(--sobre-noche-tenue); }
+.aliados__rotulo { font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .18em; color: var(--sobre-noche-tenue); }
 .aliados__usta { height: 43px; width: auto; }
 .aliados__tarjeta { padding: 7px 12px; background: #fff; border-radius: 7px; display: flex; }
 .aliados__tarjeta img { height: 52px; width: auto; }
@@ -211,14 +211,13 @@ a:hover { color: var(--naranja-texto-hover); }
 .cabeza--partida > div { display: flex; flex-direction: column; gap: 10px; }
 
 /* ---------- Sobre el evento ---------- */
-.evento__banner { width: 100%; border-radius: 14px; box-shadow: 0 18px 40px rgba(17,24,32,.22); margin-bottom: 40px; }
 .evento__texto { display: flex; flex-direction: column; gap: 20px; max-width: 780px; margin-bottom: 36px; }
 .evento__entrada { font-size: 17.5px; line-height: 1.62; color: var(--tinta-media); }
 .evento__parrafo { font-size: 16px; line-height: 1.65; color: var(--tinta-suave); }
 
 .fichas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
 .ficha { display: flex; flex-direction: column; gap: 7px; padding: 18px 20px; background: var(--blanco); border: 1px solid var(--linea); border-radius: 11px; }
-.ficha__rotulo { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .16em; color: var(--tenue); }
+.ficha__rotulo { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .16em; color: var(--tenue); }
 .ficha strong { font-size: 16px; font-weight: 600; color: var(--tinta); }
 .ficha span.detalle { font-size: 14px; color: var(--tinta-suave); }
 
@@ -255,7 +254,7 @@ a:hover { color: var(--naranja-texto-hover); }
 .rutas--tres { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
 .curso { display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; background: var(--papel-2); border: 1px solid var(--linea); border-left: 3px solid var(--azul); border-radius: 10px; }
-.curso__ruta { font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .14em; color: var(--azul-hondo); }
+.curso__ruta { font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .14em; color: var(--azul-hondo); }
 .curso__titulo { font-size: 16.5px; font-weight: 600; color: var(--tinta); }
 .curso__quien { font-size: 14.5px; color: var(--tinta-suave); }
 .curso__donde { font-size: 13.5px; color: var(--tenue); }
@@ -324,7 +323,7 @@ a:hover { color: var(--naranja-texto-hover); }
 .aviso-pendiente strong { font-size: 17px; font-weight: 600; color: var(--tinta); }
 .aviso-pendiente p { font-size: 14.5px; color: var(--tinta-suave); }
 
-.etiqueta { display: inline-block; padding: 3px 9px; border-radius: 5px; font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .1em; }
+.etiqueta { display: inline-block; padding: 3px 9px; border-radius: 5px; font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .1em; }
 .etiqueta--invitado { background: var(--crema-fondo); color: var(--crema-tinta); }
 .etiqueta--cursillo { background: var(--azul-fondo); color: var(--azul-hondo); }
 .franja__encabezado { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
@@ -348,7 +347,8 @@ a:hover { color: var(--naranja-texto-hover); }
 }
 img.persona__retrato { display: block; flex-shrink: 0; }
 .persona__retrato--cursillo { border-color: var(--azul); }
-.persona__nombre { font-size: 17px; font-weight: 600; color: var(--tinta); }
+/* Es un h4 (para navegar con lector de pantalla) con la letra de texto, no la display. */
+.persona__nombre { font-family: var(--texto); font-size: 17px; font-weight: 600; letter-spacing: normal; color: var(--tinta); }
 .persona__rol { font-size: 14px; line-height: 1.5; color: var(--tinta-suave); }
 .persona__sesion { font-size: 14px; line-height: 1.5; font-style: italic; color: var(--tinta-media); }
 
@@ -367,6 +367,15 @@ img.persona__retrato { display: block; flex-shrink: 0; }
 .persona__perfil .persona__bio { margin-top: 4px; }
 .persona__reserva { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 4px; font-size: 14.5px; font-weight: 600; }   /* mismo relleno que «Ver perfil», para que alineen */
 .persona__perfil .persona__bio p { font-size: 14.5px; }
+
+/* En escritorio la reja es de 6 columnas: cada tarjeta ocupa 2 (tres por fila)
+   y las de Sosa y Llinás, que son dos en su grupo, 3 cada una, para que la
+   fila de Charlas no deje un hueco. */
+@media (min-width: 1081px) {
+    .personas { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .persona { grid-column: span 2; }
+    .persona--mitad { grid-column: span 3; }
+}
 
 /* La charla inaugural ocupa toda la fila, con la biografía a la vista.
    Las demás tarjetas van de tres en tres, con la biografía plegada. */
@@ -427,7 +436,7 @@ img.persona__retrato { display: block; flex-shrink: 0; }
     display: flex; flex-direction: column; gap: 12px; flex: 0 1 356px;
     padding: 32px; background: var(--noche-3); border: 1px solid var(--linea-noche); border-radius: 15px;
 }
-.tarjeta-inscripcion__rotulo { font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .16em; color: var(--sobre-noche-tenue); }
+.tarjeta-inscripcion__rotulo { font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .16em; color: var(--sobre-noche-tenue); }
 .tarjeta-inscripcion__fecha { font-family: var(--display); font-size: 26px; font-weight: 700; color: #fff; }
 .tarjeta-inscripcion .boton { margin-top: 8px; }
 .tarjeta-inscripcion small { font-size: 13px; line-height: 1.5; color: var(--sobre-noche-tenue); }
@@ -439,7 +448,7 @@ img.persona__retrato { display: block; flex-shrink: 0; }
 .pie__marca img { width: 226px; }
 .pie__marca p { font-size: 13.5px; line-height: 1.6; color: var(--sobre-noche-tenue); }
 .pie__columna { display: flex; flex-direction: column; gap: 4px; }
-.pie__titulo { font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .16em; color: var(--sobre-noche-tenue); margin-bottom: 7px; }
+.pie__titulo { font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .16em; color: var(--sobre-noche-tenue); margin-bottom: 7px; }
 .pie__columna a, .pie__columna span { display: flex; align-items: center; min-height: 44px; font-size: 14px; color: var(--sobre-noche); }
 .pie__columna a:hover { color: #fff; }
 .pie__cierre { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--linea-noche); }
@@ -488,7 +497,6 @@ img.persona__retrato { display: block; flex-shrink: 0; }
     .aliados__rotulo { width: 96px; flex-shrink: 0; }
     .aliados__nota { margin-left: 0; }
 
-    .evento__banner { margin-bottom: 24px; }
     .evento__texto { margin-bottom: 24px; }
     .evento__entrada { font-size: 15.5px; }
 
@@ -526,7 +534,11 @@ img.persona__retrato { display: block; flex-shrink: 0; }
     .persona__rol     { grid-column: 2; grid-row: 3; }
     .persona__sesion  { grid-column: 1 / -1; grid-row: 4; margin-top: 6px; }
     .persona__perfil  { grid-column: 1 / -1; grid-row: 5; }
-    .persona__reserva { grid-column: 1 / -1; grid-row: 6; justify-self: start; }
+    /* «Reservar cupo» comparte la fila de «Ver perfil», a la derecha: en su propia
+       fila sumaba 6 × 49 px a la sección. Al abrir el perfil, la biografía
+       empieza debajo y no lo toca. */
+    .persona:not(.persona--destacada) .persona__perfil summary { display: inline-flex; }
+    .persona__reserva { grid-column: 1 / -1; grid-row: 5; justify-self: end; align-self: start; }
     .persona:not(.persona--destacada) .persona__perfil summary { justify-content: flex-start; }
     /* La etiqueta del destacado es larga: va arriba, a todo el ancho,
        para que no se parta en dos líneas junto al retrato. */
@@ -539,7 +551,10 @@ img.persona__retrato { display: block; flex-shrink: 0; }
     .persona--destacada .persona__enlace { grid-column: 1 / -1; }
     .persona__bio p { font-size: 14.5px; }
 
-    .comite { grid-template-columns: minmax(0, 1fr); }
+    /* Dos columnas, con la inicial encima del nombre: de una en una eran 1.064 px. */
+    .comite { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .miembro { flex-direction: column; justify-content: center; gap: 10px; padding: 16px 12px; text-align: center; }
+    .miembro__inicial { width: 44px; height: 44px; font-size: 15px; }
     .recursos { grid-template-columns: minmax(0, 1fr); }
     .recurso .boton { width: 100%; }
 
@@ -556,7 +571,9 @@ img.persona__retrato { display: block; flex-shrink: 0; }
 
 @media (max-width: 480px) {
     .contenedor { width: min(100% - 36px, 1120px); }
-    .pie__reja { grid-template-columns: minmax(0, 1fr); }
+    /* Los enlaces van a dos columnas; Contacto, a todo el ancho para que el correo quepa. */
+    .pie__reja { gap: 8px 20px; }
+    .pie__columna:last-child { grid-column: 1 / -1; margin-top: 16px; }
 }
 
 /* ---------- Páginas interiores ---------- */
@@ -591,7 +608,7 @@ img.persona__retrato { display: block; flex-shrink: 0; }
     padding: 20px 26px; margin-bottom: 32px; border-radius: 12px;
     background: var(--crema-fondo); border: 1px solid #F2DFBE;
 }
-.limite__rotulo { font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .16em; color: var(--crema-tinta); }
+.limite__rotulo { font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .16em; color: var(--crema-tinta); }
 .limite__fecha { font-family: var(--display); font-size: clamp(21px, 3vw, 26px); font-weight: 700; color: var(--naranja-texto); }
 .limite__nota { font-size: 14px; line-height: 1.5; color: var(--tinta-suave); margin-left: auto; max-width: 330px; }
 
@@ -600,7 +617,7 @@ img.persona__retrato { display: block; flex-shrink: 0; }
     display: flex; flex-direction: column; gap: 12px; padding: 30px;
     background: var(--blanco); border: 1px solid var(--linea); border-radius: 13px;
 }
-.modalidad__rotulo { display: flex; align-items: center; gap: 9px; font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .14em; color: var(--naranja-texto); }
+.modalidad__rotulo { display: flex; align-items: center; gap: 9px; font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .14em; color: var(--naranja-texto); }
 .modalidad h3 { font-size: 21px; }
 .modalidad__duracion { align-self: flex-start; padding: 5px 11px; border-radius: 6px; background: var(--azul-fondo); font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--azul-hondo); }
 .modalidad p { font-size: 14.5px; line-height: 1.6; color: var(--tinta-suave); }
@@ -685,7 +702,7 @@ img.persona__retrato { display: block; flex-shrink: 0; }
     color: #fff; transition: border-color .2s ease, background-color .2s ease;
 }
 .tarifa__opcion:hover { background: #0E2239; border-color: var(--naranja); color: #fff; }
-.tarifa__quien { grid-column: 1; font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--sobre-noche-suave); }
+.tarifa__quien { grid-column: 1; font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--sobre-noche-suave); }
 .tarifa__valor { grid-column: 1; font-family: var(--display); font-size: 24px; font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; color: #fff; }
 .tarifa__accion { grid-column: 2; grid-row: 1 / span 2; display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 700; color: var(--naranja); }
 .tarifa__opcion:hover .tarifa__accion svg { transform: translateX(2px); }

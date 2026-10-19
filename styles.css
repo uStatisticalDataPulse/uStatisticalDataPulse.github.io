@@ -604,6 +604,9 @@ img.persona__retrato { display: block; flex-shrink: 0; }
 
 @media (max-width: 480px) {
     .contenedor { width: min(100% - 36px, 1120px); }
+    /* Fecha y lugar a todo el ancho: a media columna, «Agregar al calendario»
+       y «11 y 12 de noviembre, 2026» se partían en dos y tres líneas. */
+    .ficha--ancha { grid-column: 1 / -1; }
     /* Los enlaces van a dos columnas; Contacto, a todo el ancho para que el correo quepa. */
     .pie__reja { gap: 8px 20px; }
     .pie__columna:last-child { grid-column: 1 / -1; margin-top: 16px; }

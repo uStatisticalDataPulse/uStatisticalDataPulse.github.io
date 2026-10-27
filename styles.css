@@ -295,6 +295,18 @@ a:hover { color: var(--naranja-texto-hover); }
 .curso--conferencia { border-left-color: var(--naranja); }
 .curso--conferencia .curso__ruta { color: var(--crema-tinta); }
 
+/* Comunicaciones del jueves: un recuadro por salón, dentro de su franja. */
+.salones { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; align-items: start; margin-top: 10px; }
+.salon { display: flex; flex-direction: column; gap: 12px; padding: 16px 18px; background: var(--blanco); border: 1px solid var(--linea); border-radius: 10px; }
+.salon__nombre { font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .14em; color: var(--crema-tinta); }
+.salon__lista { display: flex; flex-direction: column; list-style: none; padding: 0; margin: 0; }
+.salon__lista li { display: flex; flex-direction: column; gap: 3px; padding-block: 12px; border-top: 1px solid var(--linea); }
+.salon__lista li:first-child { padding-top: 0; border-top: 0; }
+.salon__lista li:last-child { padding-bottom: 0; }
+.salon__hora { font-family: var(--mono); font-size: 12.5px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--tinta-suave); }
+.salon__titulo { font-size: 15px; font-weight: 600; line-height: 1.4; color: var(--tinta); }
+.salon__autores { font-size: 13.5px; line-height: 1.45; color: var(--tinta-suave); }
+
 .programa__guia {
     display: flex; align-items: flex-start; gap: 12px; max-width: 78ch; margin-bottom: 22px;
     font-size: 14.5px; line-height: 1.55; color: var(--tinta-suave);
@@ -549,7 +561,7 @@ img.persona__retrato { display: block; flex-shrink: 0; }
     .franja--pausa { display: flex; align-items: center; gap: 12px; }
     .programa__llamado { padding: 20px; }
     .programa__llamado-acciones, .programa__llamado-acciones .boton { width: 100%; }
-    .rutas, .rutas--tres { grid-template-columns: minmax(0, 1fr); }
+    .rutas, .rutas--tres, .salones { grid-template-columns: minmax(0, 1fr); }
     .curso .curso__ruta { color: var(--azul-hondo); }
 
     .aviso-pendiente { flex-direction: column; align-items: stretch; padding: 24px; }
